@@ -53,6 +53,7 @@
     },
     "featured_collection_eeyqP4": {
       "type": "featured-collection",
+      "custom_css": [],
       "name": "Featured collection",
       "settings": {
         "collection": "",
