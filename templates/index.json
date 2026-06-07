@@ -36,6 +36,7 @@
       "block_order": [
         "image_TUQL9P"
       ],
+      "disabled": true,
       "name": "Slideshow",
       "settings": {
         "full_width": true,
