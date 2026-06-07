@@ -30,7 +30,7 @@
         "autoplay": false,
         "cycle_speed": 6,
         "text_size": "text-xs",
-        "navigation_mode": "scrolling",
+        "navigation_mode": "arrows",
         "scrolling_speed": 10,
         "background": "#1a1a1a",
         "background_gradient": "",
@@ -39,6 +39,14 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        ".header {padding: 24px 26px 10px;}",
+        ".header__heading-logo {max-width: 300px;}",
+        ".header__icon--menu {width: 88px; height: 88px; border: 2px solid #bbb; border-radius: 10px; color: #a30b0b;}",
+        ".header__search {display: block; padding: 0 26px 16px;}",
+        ".search__input,.field__input[type=\"search\"] {height: 88px; font-size: 30px; padding-left: 30px; border: 2px solid #bbb;}",
+        ".field__button {height: 88px; width: 92px; background: #a30b0b; color: white;}"
+      ],
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": false,
