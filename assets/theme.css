@@ -10115,3 +10115,179 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   display: -webkit-box;
   overflow: hidden;
 }
+/* HEADER STYLE ALTUNTAS */
+.header-wrapper {
+  background: #fff;
+  border-bottom: none;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "logo menu"
+    "search search";
+  align-items: center;
+  gap: 18px 20px;
+  padding: 24px 26px 18px;
+}
+
+/* Logo / nom boutique */
+.header__heading {
+  grid-area: logo;
+  justify-self: start;
+  margin: 0;
+}
+
+.header__heading-link {
+  padding: 0;
+}
+
+.header__heading-logo {
+  max-width: 320px;
+  width: auto;
+  height: auto;
+}
+
+.header__heading .h2,
+.header__heading-link .h2 {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+/* Menu carré à droite */
+.header__icon--menu {
+  grid-area: menu;
+  width: 88px;
+  height: 88px;
+  border: 2px solid #bbb;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px rgba(0,0,0,.18);
+  color: #a30b0b;
+  justify-self: end;
+}
+
+/* Masquer loupe et panier en haut */
+.header__icon--search,
+.header__icon--cart,
+.header__icon--account {
+  display: none !important;
+}
+
+/* Zone recherche */
+.header__search {
+  grid-area: search;
+  display: block !important;
+  width: 100%;
+}
+
+details-modal.header__search {
+  display: block !important;
+}
+
+/* Force la barre recherche visible */
+.header__search details,
+.header__search .search-modal,
+.header__search .search-modal__content {
+  position: static !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  height: auto !important;
+  width: 100% !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Formulaire */
+.header__search form,
+.search-modal__form,
+.search__form {
+  width: 100%;
+  max-width: none;
+  position: relative;
+}
+
+/* Champ recherche */
+.search__input,
+.field__input[type="search"],
+input[type="search"] {
+  width: 100%;
+  height: 88px;
+  border: 2px solid #b5b5b5;
+  border-radius: 8px;
+  font-size: 30px;
+  padding: 0 120px 0 30px;
+  background: #fff;
+  color: #333;
+}
+
+.search__input::placeholder,
+.field__input::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+/* Bouton rouge */
+.search__button,
+.field__button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 92px;
+  height: 88px;
+  background: #a30b0b !important;
+  border-radius: 0 8px 8px 0;
+  color: #fff !important;
+}
+
+/* Icône loupe blanche */
+.search__button svg,
+.field__button svg {
+  width: 36px;
+  height: 36px;
+  color: #fff;
+}
+
+/* Labels Shopify */
+.field__label {
+  display: none;
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+  .header {
+    grid-template-columns: 1fr auto;
+    padding: 22px 26px 16px;
+  }
+
+  .header__heading .h2,
+  .header__heading-link .h2 {
+    font-size: 38px;
+  }
+
+  .header__heading-logo {
+    max-width: 300px;
+  }
+
+  .header__icon--menu {
+    width: 88px;
+    height: 88px;
+  }
+
+  .search__input,
+  .field__input[type="search"],
+  input[type="search"] {
+    height: 88px;
+    font-size: 30px;
+  }
+
+  .search__button,
+  .field__button {
+    height: 88px;
+    width: 92px;
+  }
+}
