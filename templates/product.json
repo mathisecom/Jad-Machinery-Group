@@ -133,31 +133,75 @@
         "input_text_color": ""
       }
     },
-    "related-products": {
-      "type": "related-products",
+    "sectionbranding_4ktVih": {
+      "type": "sectionbranding",
+      "blocks": {
+        "feature_nAQ9Aw": {
+          "type": "feature",
+          "settings": {
+            "icon": "check",
+            "text": "Refurbished Quality"
+          }
+        },
+        "feature_W3a9Nd": {
+          "type": "feature",
+          "settings": {
+            "icon": "rocket",
+            "text": "Reliable Performance"
+          }
+        },
+        "feature_9XHYMy": {
+          "type": "feature",
+          "settings": {
+            "icon": "star",
+            "text": "Warranty Included"
+          }
+        }
+      },
+      "block_order": [
+        "feature_nAQ9Aw",
+        "feature_W3a9Nd",
+        "feature_9XHYMy"
+      ],
+      "name": "Section Branding",
       "settings": {
-        "recommendations_count": 6,
-        "products": [],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_per_row_mobile": "1",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "You may also like",
-        "content": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
+        "image_position": "right",
+        "show_badge": true,
+        "show_badge_icon": true,
+        "badge_text": "Refurbishment",
+        "title": "Refurbished Bakery Machines, Ready to Perform",
+        "description": "<p>At Jad-Machinery-Group, we carefully inspect, refurbish, and test used bakery machines to ensure reliable, safe, and long-lasting performance — with warranty.</p>",
+        "button_text": "Discover our machines",
+        "button_url": "",
+        "show_decorations": true,
+        "image_radius": 24,
+        "bg_color": "#ffffff",
+        "text_color": "#183052",
+        "description_color": "#4b5563",
+        "badge_bg": "#eef3f8",
+        "badge_text_color": "#183052",
+        "feature_bg": "#ffffff",
+        "feature_text_color": "#183052",
+        "feature_icon_bg": "#eef3f8",
+        "feature_icon_color": "#183052",
+        "button_color_from": "#183052",
+        "button_color_to": "#2f4d76",
+        "button_text_color": "#ffffff",
+        "image_bg_color": "#eef3f8",
+        "decoration_color": "#183052",
+        "title_size": 34,
+        "title_size_mobile": 21,
+        "description_size": 16,
+        "description_size_mobile": 13,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40
       }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "sectionbranding_4ktVih"
   ]
 }
