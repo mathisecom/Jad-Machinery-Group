@@ -116,22 +116,22 @@
         "feature_RWFqjr": {
           "type": "feature",
           "settings": {
-            "icon": "users",
-            "text": "Création de logos inoubliables et distinctifs"
+            "icon": "star",
+            "text": "Refurbished Quality"
           }
         },
         "feature_cqw7bP": {
           "type": "feature",
           "settings": {
-            "icon": "diamond",
-            "text": "Création de chartes graphiques élégantes"
+            "icon": "rocket",
+            "text": "Reliable Performance"
           }
         },
         "feature_pUHTfr": {
           "type": "feature",
           "settings": {
-            "icon": "typography",
-            "text": "Sélection de typographies percutantes"
+            "icon": "check",
+            "text": "Warranty Included"
           }
         }
       },
