@@ -9,7 +9,16 @@
   - Brand color: #183052
 {% endcomment %}
 
-<section class="jmg-collection-slider">
+<section
+  class="jmg-collection-slider"
+  data-text-align="{{ section.settings.text_alignment }}"
+  style="
+    --jmg-section-bg: {{ section.settings.section_bg_color }};
+    --jmg-title-size: {{ section.settings.title_size }}px;
+    --jmg-card-text-size: {{ section.settings.card_text_size }}px;
+    --jmg-text-align: {{ section.settings.text_alignment }};
+  "
+>
   <div class="jmg-collection-slider__inner">
 
     <div class="jmg-collection-slider__header">
@@ -130,12 +139,13 @@
 .jmg-collection-slider__title {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 28px;
+  font-size: var(--jmg-title-size, 28px);
   line-height: 1.1;
   font-weight: 700;
   color: #183052;
   text-transform: uppercase;
   letter-spacing: -0.035em;
+  text-align: var(--jmg-text-align, left);
 }
 
 .jmg-collection-slider__button {
@@ -252,11 +262,13 @@
 }
 
 .jmg-collection-card__title {
-  font-size: 19px;
+  font-size: var(--jmg-card-text-size, 19px);
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: var(--jmg-text-align, left);
+  width: 100%;
 }
 
 .jmg-collection-card__arrow {
@@ -286,6 +298,28 @@
   transform: translateX(3px);
 }
 
+/* Alignement centré */
+.jmg-collection-slider[data-text-align="center"] .jmg-collection-card {
+  justify-content: center;
+}
+
+.jmg-collection-slider[data-text-align="center"] .jmg-collection-card__content {
+  justify-content: center;
+}
+
+.jmg-collection-slider[data-text-align="center"] .jmg-collection-card__arrow {
+  display: none;
+}
+
+/* Alignement à droite */
+.jmg-collection-slider[data-text-align="right"] .jmg-collection-card {
+  justify-content: flex-end;
+}
+
+.jmg-collection-slider[data-text-align="right"] .jmg-collection-card__content {
+  justify-content: flex-end;
+}
+
 /* Tablet */
 @media screen and (max-width: 1199px) {
   .jmg-collection-slider__track {
@@ -305,7 +339,7 @@
   }
 
   .jmg-collection-slider__title {
-    font-size: 24px;
+    font-size: var(--jmg-title-size, 24px);
   }
 
   .jmg-collection-slider__button {
@@ -346,7 +380,7 @@
   }
 
   .jmg-collection-card__title {
-    font-size: 17px;
+    font-size: var(--jmg-card-text-size, 17px);
   }
 
   .jmg-collection-card__icon {
@@ -390,6 +424,52 @@
       "id": "heading",
       "label": "Heading",
       "default": "Top Categories"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#f3f4f6"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille du titre",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "label": "Taille du texte des cartes",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "default": 19
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Alignement du texte",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centré"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ],
+      "default": "left"
     },
     {
       "type": "text",
