@@ -38,7 +38,6 @@
 <section class="branding-section" aria-label="{{ section.settings.title | escape }}">
   <div class="branding-container branding-layout--{{ section.settings.image_position }}">
 
-    {%- comment -%} ============ COLONNE TEXTE ============ {%- endcomment -%}
     <div class="branding-content">
 
       {%- if section.settings.show_badge and section.settings.badge_text != blank -%}
@@ -106,7 +105,6 @@
 
     </div>
 
-    {%- comment -%} ============ COLONNE IMAGE ============ {%- endcomment -%}
     <div class="branding-visual">
       <div class="branding-visual__inner">
 
@@ -117,11 +115,13 @@
             <line x1="22" y1="24" x2="22" y2="26"/>
             <line x1="38" y1="24" x2="38" y2="26"/>
           </svg>
+
           <svg class="branding-deco branding-deco--lines" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
             <line x1="10" y1="20" x2="20" y2="8"/>
             <line x1="20" y1="22" x2="30" y2="10"/>
             <line x1="28" y1="28" x2="36" y2="18"/>
           </svg>
+
           <svg class="branding-deco branding-deco--swirl" viewBox="0 0 80 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <path d="M5 30 Q 20 5, 40 25 T 75 30 Q 60 50, 40 35"/>
           </svg>
@@ -150,284 +150,322 @@
 </section>
 
 {% stylesheet %}
+
+/* ================================
+   TYPOGRAPHIES JAD-MACHINERY-GROUP
+   Space Grotesk + Fustat
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+.branding-section {
+  background-color: var(--branding-bg, #ffffff);
+  padding: var(--branding-pt, 80px) 20px var(--branding-pb, 80px);
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Fustat', sans-serif;
+}
+
+.branding-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.branding-layout--right .branding-content { order: 1; }
+.branding-layout--right .branding-visual { order: 2; }
+.branding-layout--left .branding-content { order: 2; }
+.branding-layout--left .branding-visual { order: 1; }
+
+/* ============ CONTENT ============ */
+
+.branding-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.branding-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--branding-badge-bg, #f4f4f5);
+  color: var(--branding-badge-text, #18181b);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.branding-badge__icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.branding-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--branding-title-size, 44px);
+  line-height: 1.08;
+  font-weight: 700;
+  color: var(--branding-text, #18181b);
+  margin: 0 0 20px;
+  letter-spacing: -0.04em;
+}
+
+.branding-description {
+  font-family: 'Fustat', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 400;
+  color: var(--branding-desc, #71717a);
+  margin: 0 0 32px;
+  max-width: 520px;
+}
+
+.branding-description p {
+  margin: 0 0 12px;
+}
+
+.branding-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============ FEATURES ============ */
+
+.branding-features {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.branding-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  background-color: var(--branding-feature-bg, #ffffff);
+  color: var(--branding-feature-text, #18181b);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  width: fit-content;
+  max-width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  letter-spacing: -0.01em;
+}
+
+.branding-feature:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.branding-feature__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--branding-feature-icon-bg, #f4f4f5);
+  color: var(--branding-feature-icon-color, #18181b);
+  flex-shrink: 0;
+}
+
+.branding-feature__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.branding-feature__text {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ============ BUTTON ============ */
+
+.branding-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--branding-btn-from, #f9a8d4), var(--branding-btn-to, #ec4899));
+  color: var(--branding-btn-text, #ffffff);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  letter-spacing: -0.01em;
+}
+
+.branding-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.branding-button:active {
+  transform: translateY(0);
+}
+
+/* ============ VISUAL ============ */
+
+.branding-visual {
+  width: 100%;
+}
+
+.branding-visual__inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #fafafa 0%, #f4f4f5 100%);
+  border-radius: var(--branding-radius, 24px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.branding-image-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: var(--branding-image-bg, transparent);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.branding-image-wrap--placeholder svg {
+  width: 60%;
+  height: auto;
+  opacity: 0.4;
+}
+
+.branding-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============ DECORATIONS ============ */
+
+.branding-deco {
+  position: absolute;
+  color: var(--branding-decoration, #ec4899);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.branding-deco--smile {
+  width: 56px;
+  height: 56px;
+  top: 8%;
+  left: 6%;
+}
+
+.branding-deco--lines {
+  width: 36px;
+  height: 36px;
+  top: 12%;
+  right: 12%;
+}
+
+.branding-deco--swirl {
+  width: 80px;
+  height: 60px;
+  bottom: 6%;
+  right: 6%;
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 989px) {
   .branding-section {
-    background-color: var(--branding-bg, #ffffff);
-    padding: var(--branding-pt, 80px) 20px var(--branding-pb, 80px);
-    width: 100%;
-    box-sizing: border-box;
+    padding: var(--branding-pt-mobile, 60px) 16px var(--branding-pb-mobile, 60px);
   }
 
   .branding-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
-  .branding-layout--right .branding-content { order: 1; }
-  .branding-layout--right .branding-visual { order: 2; }
-  .branding-layout--left .branding-content { order: 2; }
-  .branding-layout--left .branding-visual { order: 1; }
+  .branding-layout--left .branding-content,
+  .branding-layout--right .branding-content {
+    order: 1;
+  }
 
-  /* ============ CONTENT ============ */
+  .branding-layout--left .branding-visual,
+  .branding-layout--right .branding-visual {
+    order: 2;
+  }
+
   .branding-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .branding-badge {
-    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background-color: var(--branding-badge-bg, #f4f4f5);
-    color: var(--branding-badge-text, #18181b);
-    padding: 8px 16px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 24px;
-    line-height: 1;
-  }
-
-  .branding-badge__icon {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
+    text-align: center;
   }
 
   .branding-title {
-    font-size: var(--branding-title-size, 44px);
-    line-height: 1.1;
-    font-weight: 700;
-    color: var(--branding-text, #18181b);
-    margin: 0 0 20px;
-    letter-spacing: -0.02em;
+    font-size: var(--branding-title-size-mobile, 28px);
   }
 
   .branding-description {
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--branding-desc, #71717a);
-    margin: 0 0 32px;
-    max-width: 520px;
+    text-align: center;
   }
 
-  .branding-description p { margin: 0 0 12px; }
-  .branding-description p:last-child { margin-bottom: 0; }
-
-  /* ============ FEATURES ============ */
   .branding-features {
-    list-style: none;
-    margin: 0 0 36px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
+    align-items: stretch;
   }
 
   .branding-feature {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 22px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 999px;
-    background-color: var(--branding-feature-bg, #ffffff);
-    color: var(--branding-feature-text, #18181b);
-    font-size: 15px;
-    font-weight: 500;
-    width: fit-content;
-    max-width: 100%;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .branding-feature:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  }
-
-  .branding-feature__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: var(--branding-feature-icon-bg, #f4f4f5);
-    color: var(--branding-feature-icon-color, #18181b);
-    flex-shrink: 0;
-  }
-
-  .branding-feature__icon svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  /* ============ BUTTON ============ */
-  .branding-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 32px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, var(--branding-btn-from, #f9a8d4), var(--branding-btn-to, #ec4899));
-    color: var(--branding-btn-text, #ffffff);
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease, filter 0.2s ease;
-  }
-
-  .branding-button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.05);
-  }
-
-  .branding-button:active {
-    transform: translateY(0);
-  }
-
-  /* ============ VISUAL ============ */
-  .branding-visual {
     width: 100%;
+    justify-content: flex-start;
   }
 
   .branding-visual__inner {
-    position: relative;
-    width: 100%;
     aspect-ratio: 4 / 3;
-    background: linear-gradient(135deg, #fafafa 0%, #f4f4f5 100%);
-    border-radius: var(--branding-radius, 24px);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .branding-title {
+    font-size: 24px;
   }
 
-  .branding-image-wrap {
+  .branding-description {
+    font-size: 15px;
+  }
+
+  .branding-feature {
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+
+  .branding-button {
     width: 100%;
-    height: 100%;
-    background-color: var(--branding-image-bg, transparent);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
+    padding: 14px 24px;
   }
+}
 
-  .branding-image-wrap--placeholder svg {
-    width: 60%;
-    height: auto;
-    opacity: 0.4;
-  }
-
-  .branding-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* ============ DECORATIONS ============ */
-  .branding-deco {
-    position: absolute;
-    color: var(--branding-decoration, #ec4899);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .branding-deco--smile {
-    width: 56px;
-    height: 56px;
-    top: 8%;
-    left: 6%;
-  }
-
-  .branding-deco--lines {
-    width: 36px;
-    height: 36px;
-    top: 12%;
-    right: 12%;
-  }
-
-  .branding-deco--swirl {
-    width: 80px;
-    height: 60px;
-    bottom: 6%;
-    right: 6%;
-  }
-
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 989px) {
-    .branding-section {
-      padding: var(--branding-pt-mobile, 60px) 16px var(--branding-pb-mobile, 60px);
-    }
-
-    .branding-container {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    /* On mobile, content is always above image (matches Image 2) */
-    .branding-layout--left .branding-content,
-    .branding-layout--right .branding-content { order: 1; }
-    .branding-layout--left .branding-visual,
-    .branding-layout--right .branding-visual { order: 2; }
-
-    .branding-content {
-      align-items: center;
-      text-align: center;
-    }
-
-    .branding-title {
-      font-size: var(--branding-title-size-mobile, 28px);
-    }
-
-    .branding-description {
-      text-align: center;
-    }
-
-    .branding-features {
-      align-items: stretch;
-    }
-
-    .branding-feature {
-      width: 100%;
-      justify-content: flex-start;
-    }
-
-    .branding-visual__inner {
-      aspect-ratio: 4 / 3;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .branding-title {
-      font-size: 24px;
-    }
-
-    .branding-description {
-      font-size: 15px;
-    }
-
-    .branding-feature {
-      font-size: 14px;
-      padding: 12px 18px;
-    }
-
-    .branding-button {
-      width: 100%;
-      padding: 14px 24px;
-    }
-  }
 {% endstylesheet %}
 
 {% schema %}
@@ -445,8 +483,14 @@
       "id": "image_position",
       "label": "Position de l'image (Desktop)",
       "options": [
-        { "value": "right", "label": "À droite" },
-        { "value": "left", "label": "À gauche" }
+        {
+          "value": "right",
+          "label": "À droite"
+        },
+        {
+          "value": "left",
+          "label": "À gauche"
+        }
       ],
       "default": "right"
     },
@@ -480,13 +524,13 @@
       "type": "text",
       "id": "title",
       "label": "Titre",
-      "default": "Envie de plus ? Un branding complet pour votre marque"
+      "default": "Refurbished Bakery Machines, Ready to Perform"
     },
     {
       "type": "richtext",
       "id": "description",
       "label": "Description",
-      "default": "<p>Notre agence ne propose pas seulement des sites web, mais aussi la création d'un branding pour sublimer votre marque.</p>"
+      "default": "<p>At Jad-Machinery-Group, we carefully inspect, refurbish, and test used bakery machines to ensure reliable, safe, and long-lasting performance — with warranty.</p>"
     },
     {
       "type": "header",
@@ -496,7 +540,7 @@
       "type": "text",
       "id": "button_text",
       "label": "Texte du bouton",
-      "default": "Réserver un appel"
+      "default": "Discover our machines"
     },
     {
       "type": "url",
@@ -515,7 +559,7 @@
     {
       "type": "checkbox",
       "id": "show_decorations",
-      "label": "Afficher les décorations (smiley, traits)",
+      "label": "Afficher les décorations",
       "default": true
     },
     {
@@ -542,13 +586,13 @@
       "type": "color",
       "id": "text_color",
       "label": "Couleur du titre",
-      "default": "#18181b"
+      "default": "#183052"
     },
     {
       "type": "color",
       "id": "description_color",
       "label": "Couleur de la description",
-      "default": "#71717a"
+      "default": "#4b5563"
     },
     {
       "type": "header",
@@ -558,13 +602,13 @@
       "type": "color",
       "id": "badge_bg",
       "label": "Fond du badge",
-      "default": "#f4f4f5"
+      "default": "#eef3f8"
     },
     {
       "type": "color",
       "id": "badge_text_color",
       "label": "Texte du badge",
-      "default": "#18181b"
+      "default": "#183052"
     },
     {
       "type": "header",
@@ -580,19 +624,19 @@
       "type": "color",
       "id": "feature_text_color",
       "label": "Texte des items",
-      "default": "#18181b"
+      "default": "#183052"
     },
     {
       "type": "color",
       "id": "feature_icon_bg",
       "label": "Fond des icônes",
-      "default": "#f4f4f5"
+      "default": "#eef3f8"
     },
     {
       "type": "color",
       "id": "feature_icon_color",
       "label": "Couleur des icônes",
-      "default": "#18181b"
+      "default": "#183052"
     },
     {
       "type": "header",
@@ -602,13 +646,13 @@
       "type": "color",
       "id": "button_color_from",
       "label": "Dégradé - couleur 1",
-      "default": "#f9a8d4"
+      "default": "#183052"
     },
     {
       "type": "color",
       "id": "button_color_to",
       "label": "Dégradé - couleur 2",
-      "default": "#ec4899"
+      "default": "#2f4d76"
     },
     {
       "type": "color",
@@ -624,13 +668,13 @@
       "type": "color",
       "id": "image_bg_color",
       "label": "Couleur de fond derrière l'image",
-      "default": "#FFD93D"
+      "default": "#eef3f8"
     },
     {
       "type": "color",
       "id": "decoration_color",
       "label": "Couleur des décorations",
-      "default": "#ec4899"
+      "default": "#183052"
     },
     {
       "type": "header",
@@ -708,16 +752,46 @@
           "id": "icon",
           "label": "Icône",
           "options": [
-            { "value": "users", "label": "Personnes" },
-            { "value": "diamond", "label": "Diamant" },
-            { "value": "typography", "label": "Typographie" },
-            { "value": "star", "label": "Étoile" },
-            { "value": "check", "label": "Coche" },
-            { "value": "heart", "label": "Cœur" },
-            { "value": "palette", "label": "Palette" },
-            { "value": "lightbulb", "label": "Ampoule" },
-            { "value": "rocket", "label": "Fusée" },
-            { "value": "target", "label": "Cible" }
+            {
+              "value": "users",
+              "label": "Personnes"
+            },
+            {
+              "value": "diamond",
+              "label": "Diamant"
+            },
+            {
+              "value": "typography",
+              "label": "Typographie"
+            },
+            {
+              "value": "star",
+              "label": "Étoile"
+            },
+            {
+              "value": "check",
+              "label": "Coche"
+            },
+            {
+              "value": "heart",
+              "label": "Cœur"
+            },
+            {
+              "value": "palette",
+              "label": "Palette"
+            },
+            {
+              "value": "lightbulb",
+              "label": "Ampoule"
+            },
+            {
+              "value": "rocket",
+              "label": "Fusée"
+            },
+            {
+              "value": "target",
+              "label": "Cible"
+            }
           ],
           "default": "check"
         },
@@ -737,22 +811,22 @@
         {
           "type": "feature",
           "settings": {
-            "icon": "users",
-            "text": "Création de logos inoubliables et distinctifs"
+            "icon": "check",
+            "text": "Refurbished Quality"
           }
         },
         {
           "type": "feature",
           "settings": {
-            "icon": "diamond",
-            "text": "Création de chartes graphiques élégantes"
+            "icon": "rocket",
+            "text": "Reliable Performance"
           }
         },
         {
           "type": "feature",
           "settings": {
-            "icon": "typography",
-            "text": "Sélection de typographies percutantes"
+            "icon": "star",
+            "text": "Warranty Included"
           }
         }
       ]
