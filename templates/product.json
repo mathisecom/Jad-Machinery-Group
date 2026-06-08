@@ -51,6 +51,18 @@
             "collapse_content": false
           }
         },
+        "button_49JVAD": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "text": "Request A Quote",
+            "size": "xl",
+            "style": "fill",
+            "stretch": true,
+            "background": "#183052",
+            "text_color": ""
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "disabled": true,
@@ -77,6 +89,7 @@
         "payment_terms",
         "separator",
         "description",
+        "button_49JVAD",
         "variant_picker",
         "quantity_selector"
       ],
