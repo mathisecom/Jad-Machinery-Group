@@ -116,7 +116,7 @@
         "card_padding": 16,
         "text_alignment": "center",
         "button_label": "All Products",
-        "button_link": ""
+        "button_link": "shopify://collections/all"
       }
     },
     "rich_text_Gf8Txb": {
