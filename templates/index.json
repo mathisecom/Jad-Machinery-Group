@@ -125,24 +125,28 @@
         "image_atJi4y": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/wp-haton-logo.png",
             "url": ""
           }
         },
         "image_rG76Lg": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/wp-haton-logo_1.png",
             "url": ""
           }
         },
         "image_y64dym": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/wp-haton-logo_2.png",
             "url": ""
           }
         },
         "image_DPWaTC": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/wp-haton-logo_3.png",
             "url": ""
           }
         }
@@ -163,8 +167,8 @@
         "heading_size": 18,
         "heading_size_mobile": 18,
         "heading_height": 130,
-        "scrolling_velocity": 30,
-        "scrolling_velocity_mobile": 30,
+        "scrolling_velocity": 24,
+        "scrolling_velocity_mobile": 14,
         "scrolling_direction": "left",
         "pause_hover": false,
         "scrolling_gap": 70,
