@@ -77,6 +77,64 @@
         "text_color": ""
       }
     },
+    "collectionslider_LCTrba": {
+      "type": "collectionslider",
+      "blocks": {
+        "collection_item_7Vwhjz": {
+          "type": "collection_item",
+          "settings": {
+            "title": "Bread Roll Lines",
+            "collection_link": "",
+            "icon": "machine"
+          }
+        },
+        "collection_item_6WcMhm": {
+          "type": "collection_item",
+          "settings": {
+            "title": "Pastry Lines",
+            "collection_link": "",
+            "icon": "gear"
+          }
+        },
+        "collection_item_dycNCk": {
+          "type": "collection_item",
+          "settings": {
+            "title": "Kneading Machines",
+            "collection_link": "",
+            "icon": "wrench"
+          }
+        },
+        "collection_item_tgGxWM": {
+          "type": "collection_item",
+          "settings": {
+            "title": "Dough Dividers",
+            "collection_link": "",
+            "icon": "box"
+          }
+        },
+        "collection_item_7j6pq8": {
+          "type": "collection_item",
+          "settings": {
+            "title": "Highlights",
+            "collection_link": "",
+            "icon": "star"
+          }
+        }
+      },
+      "block_order": [
+        "collection_item_7Vwhjz",
+        "collection_item_6WcMhm",
+        "collection_item_dycNCk",
+        "collection_item_tgGxWM",
+        "collection_item_7j6pq8"
+      ],
+      "name": "Collection slider",
+      "settings": {
+        "heading": "Top Categories",
+        "button_label": "All Products",
+        "button_link": ""
+      }
+    },
     "featured_collection_eeyqP4": {
       "type": "featured-collection",
       "custom_css": [
@@ -358,6 +416,7 @@
   "order": [
     "slideshow_QbpYbc",
     "rich_text_Gf8Txb",
+    "collectionslider_LCTrba",
     "featured_collection_eeyqP4",
     "scrolling_text_47nc8w",
     "sectionbranding_8YUTBp",
