@@ -105,6 +105,14 @@
       "name": "Collection slider",
       "settings": {
         "heading": "Top Categories",
+        "section_bg_color": "#ffffff",
+        "title_size": 22,
+        "title_alignment": "center",
+        "card_width": 260,
+        "card_text_size": 13,
+        "card_height": 52,
+        "card_padding": 18,
+        "text_alignment": "center",
         "button_label": "All Products",
         "button_link": ""
       }
