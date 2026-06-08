@@ -119,6 +119,78 @@
         "button_link": "shopify://collections/all"
       }
     },
+    "logoscroll_RcBDcd": {
+      "type": "logoscroll",
+      "blocks": {
+        "image_atJi4y": {
+          "type": "image",
+          "settings": {
+            "url": ""
+          }
+        },
+        "image_rG76Lg": {
+          "type": "image",
+          "settings": {
+            "url": ""
+          }
+        },
+        "image_y64dym": {
+          "type": "image",
+          "settings": {
+            "url": ""
+          }
+        },
+        "image_DPWaTC": {
+          "type": "image",
+          "settings": {
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_atJi4y",
+        "image_rG76Lg",
+        "image_y64dym",
+        "image_DPWaTC"
+      ],
+      "name": "SS - Scrolling logo cloud #5",
+      "settings": {
+        "layout_radius": 30,
+        "layout_border_thickness": 0,
+        "heading": "",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 18,
+        "heading_size_mobile": 18,
+        "heading_height": 130,
+        "scrolling_velocity": 30,
+        "scrolling_velocity_mobile": 30,
+        "scrolling_direction": "left",
+        "pause_hover": false,
+        "scrolling_gap": 70,
+        "scrolling_gap_mobile": 30,
+        "card_width_desktop": 100,
+        "card_width_mobile": 100,
+        "heading_color": "#121212",
+        "layout_bg_color": "#FFFFFF",
+        "layout_border_color": "#121212",
+        "background_color": "#FFFFFF",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 0,
+        "full_width": false,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
     "rich_text_Gf8Txb": {
       "type": "rich-text",
       "blocks": {
@@ -426,6 +498,7 @@
   "order": [
     "slideshow_QbpYbc",
     "collectionslider_LCTrba",
+    "logoscroll_RcBDcd",
     "rich_text_Gf8Txb",
     "featured_collection_eeyqP4",
     "scrolling_text_47nc8w",
