@@ -84,7 +84,7 @@
         ".product-card__figure {position: relative;}",
         ".product-card__figure::before,.product-card__figure::after {position: absolute; top: 8px; padding: 5px 10px; border-radius: 99px; font: 600 12px Arial; z-index: 5;}",
         ".price-list {position: relative;}",
-        ".price-list sale-price,.price-list .sale-price {font-size: 22px; font-weight: 800;}"
+        ".price-list sale-price,.price-list .sale-price {font-size: 18px; font-weight: 800; color: #183052 !important;}"
       ],
       "name": "Featured collection",
       "settings": {
