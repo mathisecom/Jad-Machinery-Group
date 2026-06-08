@@ -140,6 +140,7 @@
         "feature_cqw7bP",
         "feature_pUHTfr"
       ],
+      "custom_css": [],
       "name": "Section Branding",
       "settings": {
         "image_position": "right",
@@ -167,7 +168,7 @@
         "button_text_color": "#ffffff",
         "image_bg_color": "#eff9ff",
         "decoration_color": "#183052",
-        "title_size": 44,
+        "title_size": 34,
         "title_size_mobile": 25,
         "padding_top": 20,
         "padding_bottom": 20,
