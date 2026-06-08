@@ -43,14 +43,6 @@
           "type": "separator",
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "collapse_content": false
-          }
-        },
         "button_49JVAD": {
           "type": "button",
           "settings": {
@@ -75,30 +67,18 @@
             "size_chart_page": ""
           }
         },
+        "description": {
+          "type": "description",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "collapse_content": true
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "disabled": true,
           "settings": {}
-        },
-        "collapsible_text_WmQ4pL": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Title",
-            "content": "<p>Share some content to your customers about your products.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_text_BrVnQr": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Title",
-            "content": "<p>Share some content to your customers about your products.</p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
@@ -108,12 +88,10 @@
         "rating",
         "payment_terms",
         "separator",
-        "description",
         "button_49JVAD",
         "variant_picker",
-        "quantity_selector",
-        "collapsible_text_WmQ4pL",
-        "collapsible_text_BrVnQr"
+        "description",
+        "quantity_selector"
       ],
       "settings": {
         "full_width": true,
