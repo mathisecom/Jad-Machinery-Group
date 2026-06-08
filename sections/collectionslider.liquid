@@ -1,0 +1,505 @@
+{% comment %}
+  ============================================
+  Section: Collection Slider - Jad Machinery Group
+  ============================================
+  - Responsive desktop + mobile
+  - Custom collection cards
+  - Optional icons for each collection
+  - Space Grotesk + Fustat typography
+  - Brand color: #183052
+{% endcomment %}
+
+<section class="jmg-collection-slider">
+  <div class="jmg-collection-slider__inner">
+
+    <div class="jmg-collection-slider__header">
+      {% if section.settings.heading != blank %}
+        <h2 class="jmg-collection-slider__title">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link | default: routes.collections_url }}" class="jmg-collection-slider__button">
+          <span>{{ section.settings.button_label }}</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="jmg-collection-slider__viewport">
+        <div class="jmg-collection-slider__track">
+          {% for block in section.blocks %}
+            <a
+              href="{{ block.settings.collection_link | default: '#' }}"
+              class="jmg-collection-card"
+              {{ block.shopify_attributes }}
+            >
+              <span class="jmg-collection-card__content">
+
+                {% if block.settings.icon != 'none' %}
+                  <span class="jmg-collection-card__icon" aria-hidden="true">
+                    {% case block.settings.icon %}
+                      {% when 'machine' %}
+                        <svg viewBox="0 0 24 24">
+                          <path d="M4 17h16v3H4z"/>
+                          <path d="M6 4h12v8H6z"/>
+                          <path d="M8 12v5"/>
+                          <path d="M16 12v5"/>
+                          <path d="M9 7h6"/>
+                        </svg>
+
+                      {% when 'gear' %}
+                        <svg viewBox="0 0 24 24">
+                          <path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5z"/>
+                          <path d="M19.4 15a1.8 1.8 0 0 0 .36 1.98l.04.04a2.1 2.1 0 0 1-2.97 2.97l-.04-.04A1.8 1.8 0 0 0 14.8 19.6a1.8 1.8 0 0 0-1.1 1.65V21.3a2.1 2.1 0 0 1-4.2 0v-.06A1.8 1.8 0 0 0 8.4 19.6a1.8 1.8 0 0 0-1.98.36l-.04.04a2.1 2.1 0 0 1-2.97-2.97l.04-.04A1.8 1.8 0 0 0 3.8 15a1.8 1.8 0 0 0-1.65-1.1H2.1a2.1 2.1 0 0 1 0-4.2h.06A1.8 1.8 0 0 0 3.8 8.6a1.8 1.8 0 0 0-.36-1.98l-.04-.04a2.1 2.1 0 0 1 2.97-2.97l.04.04A1.8 1.8 0 0 0 8.4 4.4a1.8 1.8 0 0 0 1.1-1.65V2.7a2.1 2.1 0 0 1 4.2 0v.06A1.8 1.8 0 0 0 14.8 4.4a1.8 1.8 0 0 0 1.98-.36l.04-.04a2.1 2.1 0 0 1 2.97 2.97l-.04.04A1.8 1.8 0 0 0 19.4 8.6a1.8 1.8 0 0 0 1.65 1.1h.06a2.1 2.1 0 0 1 0 4.2h-.06A1.8 1.8 0 0 0 19.4 15z"/>
+                        </svg>
+
+                      {% when 'wrench' %}
+                        <svg viewBox="0 0 24 24">
+                          <path d="M14.7 6.3a5 5 0 0 0-6.4 6.4L3 18l3 3 5.3-5.3a5 5 0 0 0 6.4-6.4l-3.2 3.2-2.8-2.8z"/>
+                        </svg>
+
+                      {% when 'star' %}
+                        <svg viewBox="0 0 24 24">
+                          <path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/>
+                        </svg>
+
+                      {% when 'check' %}
+                        <svg viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+
+                      {% when 'box' %}
+                        <svg viewBox="0 0 24 24">
+                          <path d="M21 16V8l-9-5-9 5v8l9 5z"/>
+                          <path d="M3.3 8L12 13l8.7-5"/>
+                          <path d="M12 22V13"/>
+                        </svg>
+                    {% endcase %}
+                  </span>
+                {% endif %}
+
+                <span class="jmg-collection-card__title">
+                  {{ block.settings.title }}
+                </span>
+              </span>
+
+              <span class="jmg-collection-card__arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </span>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% stylesheet %}
+
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+.jmg-collection-slider {
+  width: 100%;
+  background: var(--jmg-section-bg, #f3f4f6);
+  padding: 26px 20px 38px;
+  box-sizing: border-box;
+  font-family: 'Fustat', sans-serif;
+}
+
+.jmg-collection-slider__inner {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.jmg-collection-slider__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.jmg-collection-slider__title {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #183052;
+  text-transform: uppercase;
+  letter-spacing: -0.035em;
+}
+
+.jmg-collection-slider__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 28px;
+  background: #ffffff;
+  color: #1f2933;
+  border: 1px solid rgba(24, 48, 82, 0.16);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.jmg-collection-slider__button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.jmg-collection-slider__button:hover {
+  background: #183052;
+  color: #ffffff;
+  border-color: #183052;
+  transform: translateY(-1px);
+}
+
+.jmg-collection-slider__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.jmg-collection-slider__track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.jmg-collection-card {
+  min-height: 88px;
+  padding: 0 28px;
+  background: #183052;
+  color: #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.jmg-collection-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.jmg-collection-card:hover {
+  background: #244366;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(24, 48, 82, 0.22);
+}
+
+.jmg-collection-card:hover::before {
+  opacity: 1;
+}
+
+.jmg-collection-card__content {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.jmg-collection-card__icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.jmg-collection-card__icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.jmg-collection-card__title {
+  font-size: 19px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jmg-collection-card__arrow {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.95;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.jmg-collection-card__arrow svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.jmg-collection-card:hover .jmg-collection-card__arrow {
+  transform: translateX(3px);
+}
+
+/* Tablet */
+@media screen and (max-width: 1199px) {
+  .jmg-collection-slider__track {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+  .jmg-collection-slider {
+    padding: 24px 16px 30px;
+  }
+
+  .jmg-collection-slider__header {
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .jmg-collection-slider__title {
+    font-size: 24px;
+  }
+
+  .jmg-collection-slider__button {
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .jmg-collection-slider__button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .jmg-collection-slider__viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .jmg-collection-slider__viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .jmg-collection-slider__track {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+  }
+
+  .jmg-collection-card {
+    width: 78vw;
+    max-width: 330px;
+    min-height: 78px;
+    padding: 0 20px;
+    border-radius: 6px;
+  }
+
+  .jmg-collection-card__title {
+    font-size: 17px;
+  }
+
+  .jmg-collection-card__icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+  }
+
+  .jmg-collection-card__icon svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+/* Small mobile */
+@media screen and (max-width: 480px) {
+  .jmg-collection-slider__header {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .jmg-collection-slider__button {
+    width: 100%;
+  }
+
+  .jmg-collection-card {
+    width: 84vw;
+  }
+}
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Collection slider",
+  "tag": "section",
+  "class": "section-jmg-collection-slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Top Categories"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "All Products"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_item",
+      "name": "Collection item",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Collection title",
+          "default": "Collection name"
+        },
+        {
+          "type": "url",
+          "id": "collection_link",
+          "label": "Collection link"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "No icon"
+            },
+            {
+              "value": "machine",
+              "label": "Machine"
+            },
+            {
+              "value": "gear",
+              "label": "Gear"
+            },
+            {
+              "value": "wrench",
+              "label": "Wrench"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            }
+          ],
+          "default": "machine"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection slider",
+      "blocks": [
+        {
+          "type": "collection_item",
+          "settings": {
+            "title": "Bread Roll Lines",
+            "icon": "machine"
+          }
+        },
+        {
+          "type": "collection_item",
+          "settings": {
+            "title": "Pastry Lines",
+            "icon": "gear"
+          }
+        },
+        {
+          "type": "collection_item",
+          "settings": {
+            "title": "Kneading Machines",
+            "icon": "wrench"
+          }
+        },
+        {
+          "type": "collection_item",
+          "settings": {
+            "title": "Dough Dividers",
+            "icon": "box"
+          }
+        },
+        {
+          "type": "collection_item",
+          "settings": {
+            "title": "Highlights",
+            "icon": "star"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
