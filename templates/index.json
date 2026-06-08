@@ -80,7 +80,7 @@
     "featured_collection_eeyqP4": {
       "type": "featured-collection",
       "custom_css": [
-        "@media screen and (max-width: 749px) {ul.grid, .grid.product-grid, .collection .grid {display: grid !important; grid-template-columns: repeat(2, 1fr) !important; column-gap: 10px !important; row-gap: 20px !important; } ul.grid > li, .grid__item {width: 100% !important; max-width: 100% !important; } .card__media, .card-wrapper {width: 100% !important; }}"
+        "@media screen and (max-width: 749px) {slider-component ul, .slider, .product-grid {display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; overflow: visible !important; } slider-component li, .slider__slide, .grid__item {width: 100% !important; max-width: 100% !important; min-width: 0 !important; } .slider-buttons {display: none !important; }}"
       ],
       "name": "Featured collection",
       "settings": {
