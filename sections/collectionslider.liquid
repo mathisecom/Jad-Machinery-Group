@@ -3,6 +3,7 @@
   Section: Collection Slider - Jad Machinery Group
   ============================================
   - Responsive desktop + mobile
+  - Slider desktop + mobile
   - Custom collection cards
   - Optional icons for each collection
   - Space Grotesk + Fustat typography
@@ -20,6 +21,7 @@
     --jmg-card-text-size: {{ section.settings.card_text_size }}px;
     --jmg-card-height: {{ section.settings.card_height }}px;
     --jmg-card-padding: {{ section.settings.card_padding }}px;
+    --jmg-card-width: {{ section.settings.card_width }}px;
     --jmg-text-align: {{ section.settings.text_alignment }};
   "
 >
@@ -137,7 +139,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .jmg-collection-slider[data-title-align="center"] .jmg-collection-slider__header {
@@ -165,23 +167,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 56px;
-  padding: 0 28px;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 20px;
   background: #ffffff;
   color: #1f2933;
   border: 1px solid rgba(24, 48, 82, 0.16);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   text-decoration: none;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 1;
   font-weight: 700;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
 }
 
 .jmg-collection-slider__button svg {
-  width: 22px;
-  height: 22px;
+  width: 17px;
+  height: 17px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2.4;
@@ -198,18 +202,27 @@
 
 .jmg-collection-slider__viewport {
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.jmg-collection-slider__viewport::-webkit-scrollbar {
+  display: none;
 }
 
 .jmg-collection-slider__track {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  display: flex;
   gap: 12px;
+  width: max-content;
 }
 
 .jmg-collection-card {
-  min-height: var(--jmg-card-height, 70px);
-  padding: 0 var(--jmg-card-padding, 20px);
+  width: var(--jmg-card-width, 260px);
+  flex: 0 0 auto;
+  min-height: var(--jmg-card-height, 66px);
+  padding: 0 var(--jmg-card-padding, 18px);
   background: #183052;
   color: #ffffff;
   border-radius: 6px;
@@ -275,7 +288,7 @@
 }
 
 .jmg-collection-card__title {
-  font-size: var(--jmg-card-text-size, 17px);
+  font-size: var(--jmg-card-text-size, 16px);
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
@@ -285,9 +298,9 @@
 }
 
 .jmg-collection-card__arrow {
-  width: 22px;
-  height: 22px;
-  min-width: 22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -298,8 +311,8 @@
 }
 
 .jmg-collection-card__arrow svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2.4;
@@ -333,13 +346,6 @@
   justify-content: flex-end;
 }
 
-/* Tablet */
-@media screen and (max-width: 1199px) {
-  .jmg-collection-slider__track {
-    grid-template-columns: repeat(3, minmax(180px, 1fr));
-  }
-}
-
 /* Mobile */
 @media screen and (max-width: 749px) {
   .jmg-collection-slider {
@@ -364,44 +370,31 @@
   }
 
   .jmg-collection-slider__button {
-    min-height: 44px;
-    padding: 0 16px;
-    font-size: 14px;
-    white-space: nowrap;
+    min-height: 38px;
+    padding: 0 14px;
+    font-size: 12px;
+    gap: 6px;
   }
 
   .jmg-collection-slider__button svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .jmg-collection-slider__viewport {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .jmg-collection-slider__viewport::-webkit-scrollbar {
-    display: none;
+    width: 15px;
+    height: 15px;
   }
 
   .jmg-collection-slider__track {
-    display: flex;
     gap: 10px;
-    width: max-content;
   }
 
   .jmg-collection-card {
     width: 72vw;
     max-width: 300px;
-    min-height: var(--jmg-card-height, 64px);
+    min-height: var(--jmg-card-height, 62px);
     padding: 0 var(--jmg-card-padding, 16px);
     border-radius: 6px;
   }
 
   .jmg-collection-card__title {
-    font-size: var(--jmg-card-text-size, 16px);
+    font-size: var(--jmg-card-text-size, 15px);
   }
 
   .jmg-collection-card__icon {
@@ -413,6 +406,17 @@
   .jmg-collection-card__icon svg {
     width: 19px;
     height: 19px;
+  }
+
+  .jmg-collection-card__arrow {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+  }
+
+  .jmg-collection-card__arrow svg {
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -492,13 +496,23 @@
     },
     {
       "type": "range",
+      "id": "card_width",
+      "label": "Largeur des encadrés sur PC",
+      "min": 180,
+      "max": 360,
+      "step": 10,
+      "unit": "px",
+      "default": 260
+    },
+    {
+      "type": "range",
       "id": "card_text_size",
       "label": "Taille du texte des collections",
       "min": 12,
       "max": 36,
       "step": 1,
       "unit": "px",
-      "default": 17
+      "default": 16
     },
     {
       "type": "range",
@@ -508,7 +522,7 @@
       "max": 120,
       "step": 2,
       "unit": "px",
-      "default": 70
+      "default": 66
     },
     {
       "type": "range",
@@ -518,7 +532,7 @@
       "max": 40,
       "step": 2,
       "unit": "px",
-      "default": 20
+      "default": 18
     },
     {
       "type": "select",
