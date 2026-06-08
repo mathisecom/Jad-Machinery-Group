@@ -110,6 +110,70 @@
         "product_card_text_color": ""
       }
     },
+    "sectionbranding_8YUTBp": {
+      "type": "sectionbranding",
+      "blocks": {
+        "feature_RWFqjr": {
+          "type": "feature",
+          "settings": {
+            "icon": "users",
+            "text": "Création de logos inoubliables et distinctifs"
+          }
+        },
+        "feature_cqw7bP": {
+          "type": "feature",
+          "settings": {
+            "icon": "diamond",
+            "text": "Création de chartes graphiques élégantes"
+          }
+        },
+        "feature_pUHTfr": {
+          "type": "feature",
+          "settings": {
+            "icon": "typography",
+            "text": "Sélection de typographies percutantes"
+          }
+        }
+      },
+      "block_order": [
+        "feature_RWFqjr",
+        "feature_cqw7bP",
+        "feature_pUHTfr"
+      ],
+      "name": "Section Branding",
+      "settings": {
+        "image_position": "right",
+        "show_badge": true,
+        "show_badge_icon": true,
+        "badge_text": "Branding",
+        "title": "Envie de plus ? Un branding complet pour votre marque",
+        "description": "<p>Notre agence ne propose pas seulement des sites web, mais aussi la création d'un branding pour sublimer votre marque.</p>",
+        "button_text": "Request A Quote",
+        "button_url": "",
+        "show_decorations": true,
+        "image_radius": 24,
+        "bg_color": "#ffffff",
+        "text_color": "#183052",
+        "description_color": "#71717a",
+        "badge_bg": "#eff9ff",
+        "badge_text_color": "#183052",
+        "feature_bg": "#ffffff",
+        "feature_text_color": "#183052",
+        "feature_icon_bg": "#f4f4f5",
+        "feature_icon_color": "#183052",
+        "button_color_from": "#183052",
+        "button_color_to": "#183052",
+        "button_text_color": "#ffffff",
+        "image_bg_color": "#eff9ff",
+        "decoration_color": "#183052",
+        "title_size": 44,
+        "title_size_mobile": 28,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 10,
+        "padding_bottom_mobile": 10
+      }
+    },
     "rich_text_qfqFge": {
       "type": "rich-text",
       "blocks": {
@@ -275,6 +339,7 @@
     "slideshow_QbpYbc",
     "rich_text_Gf8Txb",
     "featured_collection_eeyqP4",
+    "sectionbranding_8YUTBp",
     "rich_text_qfqFge",
     "testimonials_DVfhTy",
     "contact_XC9j6C",
