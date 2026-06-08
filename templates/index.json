@@ -78,6 +78,27 @@
         "product_card_text_color": ""
       }
     },
+    "contact_XC9j6C": {
+      "type": "contact",
+      "name": "Contact form",
+      "settings": {
+        "full_width": false,
+        "subheading": "REQUEST A QUOTE",
+        "title": "CONTACT US",
+        "content": "",
+        "text_position": "center",
+        "contact_form_size": "large",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "contact_background": "",
+        "contact_text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -135,6 +156,7 @@
   "order": [
     "slideshow_QbpYbc",
     "featured_collection_eeyqP4",
+    "contact_XC9j6C",
     "faq"
   ]
 }
