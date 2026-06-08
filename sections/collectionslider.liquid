@@ -137,22 +137,16 @@
 }
 
 .jmg-collection-slider__header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 24px;
   margin-bottom: 24px;
 }
 
-.jmg-collection-slider[data-title-align="center"] .jmg-collection-slider__header {
-  justify-content: center;
-}
-
-.jmg-collection-slider[data-title-align="right"] .jmg-collection-slider__header {
-  justify-content: flex-end;
-}
-
 .jmg-collection-slider__title {
+  grid-column: 2;
+  justify-self: center;
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   font-size: var(--jmg-title-size, 28px);
@@ -161,11 +155,13 @@
   color: #183052;
   text-transform: uppercase;
   letter-spacing: -0.035em;
-  text-align: var(--jmg-title-align, center);
-  width: 100%;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .jmg-collection-slider__button {
+  grid-column: 3;
+  justify-self: end;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -355,23 +351,25 @@
   }
 
   .jmg-collection-slider__header {
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
+    gap: 18px;
     margin-bottom: 20px;
   }
 
-  .jmg-collection-slider[data-title-align="center"] .jmg-collection-slider__header {
-    align-items: center;
-  }
-
-  .jmg-collection-slider[data-title-align="right"] .jmg-collection-slider__header {
-    align-items: flex-end;
-  }
-
   .jmg-collection-slider__title {
+    grid-column: auto;
+    justify-self: auto;
+    width: 100%;
     font-size: var(--jmg-title-size, 24px);
+    text-align: var(--jmg-title-align, center);
+    white-space: normal;
   }
 
   .jmg-collection-slider__button {
+    grid-column: auto;
+    justify-self: auto;
     min-height: 38px;
     padding: 0 14px;
     font-size: 12px;
@@ -499,7 +497,7 @@
     {
       "type": "select",
       "id": "title_alignment",
-      "label": "Alignement du titre",
+      "label": "Alignement du titre mobile",
       "options": [
         {
           "value": "left",
