@@ -32,6 +32,8 @@
     --branding-radius: {{ section.settings.image_radius }}px;
     --branding-title-size: {{ section.settings.title_size }}px;
     --branding-title-size-mobile: {{ section.settings.title_size_mobile }}px;
+    --branding-desc-size: {{ section.settings.description_size }}px;
+    --branding-desc-size-mobile: {{ section.settings.description_size_mobile }}px;
   }
 </style>
 
@@ -222,7 +224,7 @@
 
 .branding-description {
   font-family: 'Fustat', sans-serif;
-  font-size: 16px;
+  font-size: var(--branding-desc-size, 16px);
   line-height: 1.65;
   font-weight: 400;
   color: var(--branding-desc, #71717a);
@@ -430,6 +432,7 @@
 
   .branding-description {
     text-align: center;
+    font-size: var(--branding-desc-size-mobile, 15px);
   }
 
   .branding-features {
@@ -448,11 +451,11 @@
 
 @media (max-width: 480px) {
   .branding-title {
-    font-size: 24px;
+    font-size: var(--branding-title-size-mobile, 24px);
   }
 
   .branding-description {
-    font-size: 15px;
+    font-size: var(--branding-desc-size-mobile, 15px);
   }
 
   .branding-feature {
@@ -514,7 +517,7 @@
       "type": "text",
       "id": "badge_text",
       "label": "Texte du badge",
-      "default": "Branding"
+      "default": "Refurbishment"
     },
     {
       "type": "header",
@@ -699,6 +702,26 @@
       "step": 1,
       "unit": "px",
       "default": 28
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Taille du paragraphe (Desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "label": "Taille du paragraphe (Mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 15
     },
     {
       "type": "range",
