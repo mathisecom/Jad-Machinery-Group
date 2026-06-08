@@ -1,0 +1,762 @@
+{% comment %}
+  ============================================
+  Section : Branding / Présentation Service
+  ============================================
+  - Entièrement personnalisable depuis l'éditeur de thème
+  - Responsive (Desktop + Mobile)
+  - Image positionnable à gauche ou à droite
+  - Couleurs, textes, icônes et bouton modifiables
+  - Liste de features dynamique (blocks)
+{% endcomment %}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --branding-bg: {{ section.settings.bg_color }};
+    --branding-text: {{ section.settings.text_color }};
+    --branding-desc: {{ section.settings.description_color }};
+    --branding-badge-bg: {{ section.settings.badge_bg }};
+    --branding-badge-text: {{ section.settings.badge_text_color }};
+    --branding-feature-bg: {{ section.settings.feature_bg }};
+    --branding-feature-text: {{ section.settings.feature_text_color }};
+    --branding-feature-icon-bg: {{ section.settings.feature_icon_bg }};
+    --branding-feature-icon-color: {{ section.settings.feature_icon_color }};
+    --branding-btn-from: {{ section.settings.button_color_from }};
+    --branding-btn-to: {{ section.settings.button_color_to }};
+    --branding-btn-text: {{ section.settings.button_text_color }};
+    --branding-image-bg: {{ section.settings.image_bg_color }};
+    --branding-decoration: {{ section.settings.decoration_color }};
+    --branding-pt: {{ section.settings.padding_top }}px;
+    --branding-pb: {{ section.settings.padding_bottom }}px;
+    --branding-pt-mobile: {{ section.settings.padding_top_mobile }}px;
+    --branding-pb-mobile: {{ section.settings.padding_bottom_mobile }}px;
+    --branding-radius: {{ section.settings.image_radius }}px;
+    --branding-title-size: {{ section.settings.title_size }}px;
+    --branding-title-size-mobile: {{ section.settings.title_size_mobile }}px;
+  }
+</style>
+
+<section class="branding-section" aria-label="{{ section.settings.title | escape }}">
+  <div class="branding-container branding-layout--{{ section.settings.image_position }}">
+
+    {%- comment -%} ============ COLONNE TEXTE ============ {%- endcomment -%}
+    <div class="branding-content">
+
+      {%- if section.settings.show_badge and section.settings.badge_text != blank -%}
+        <div class="branding-badge">
+          {%- if section.settings.show_badge_icon -%}
+            <svg class="branding-badge__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          {%- endif -%}
+          <span>{{ section.settings.badge_text }}</span>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="branding-title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <div class="branding-description">{{ section.settings.description }}</div>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="branding-features" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'feature' -%}
+              <li class="branding-feature" {{ block.shopify_attributes }}>
+                <span class="branding-feature__icon" aria-hidden="true">
+                  {%- case block.settings.icon -%}
+                    {%- when 'users' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    {%- when 'diamond' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+                    {%- when 'typography' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+                    {%- when 'star' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    {%- when 'check' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    {%- when 'heart' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    {%- when 'palette' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+                    {%- when 'lightbulb' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+                    {%- when 'rocket' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                    {%- when 'target' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    {%- else -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  {%- endcase -%}
+                </span>
+                <span class="branding-feature__text">{{ block.settings.text }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if section.settings.button_text != blank -%}
+        <a href="{{ section.settings.button_url | default: '#' }}" class="branding-button">
+          <span>{{ section.settings.button_text }}</span>
+        </a>
+      {%- endif -%}
+
+    </div>
+
+    {%- comment -%} ============ COLONNE IMAGE ============ {%- endcomment -%}
+    <div class="branding-visual">
+      <div class="branding-visual__inner">
+
+        {%- if section.settings.show_decorations -%}
+          <svg class="branding-deco branding-deco--smile" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="30" cy="30" r="22"/>
+            <path d="M20 35c2 4 6 6 10 6s8-2 10-6"/>
+            <line x1="22" y1="24" x2="22" y2="26"/>
+            <line x1="38" y1="24" x2="38" y2="26"/>
+          </svg>
+          <svg class="branding-deco branding-deco--lines" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="10" y1="20" x2="20" y2="8"/>
+            <line x1="20" y1="22" x2="30" y2="10"/>
+            <line x1="28" y1="28" x2="36" y2="18"/>
+          </svg>
+          <svg class="branding-deco branding-deco--swirl" viewBox="0 0 80 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M5 30 Q 20 5, 40 25 T 75 30 Q 60 50, 40 35"/>
+          </svg>
+        {%- endif -%}
+
+        {%- if section.settings.image != blank -%}
+          <div class="branding-image-wrap">
+            {{ section.settings.image | image_url: width: 1400 | image_tag:
+              loading: 'lazy',
+              widths: '400, 600, 800, 1000, 1200, 1400',
+              sizes: '(min-width: 990px) 50vw, 100vw',
+              class: 'branding-image',
+              alt: section.settings.image.alt | default: section.settings.title
+            }}
+          </div>
+        {%- else -%}
+          <div class="branding-image-wrap branding-image-wrap--placeholder">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% stylesheet %}
+  .branding-section {
+    background-color: var(--branding-bg, #ffffff);
+    padding: var(--branding-pt, 80px) 20px var(--branding-pb, 80px);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .branding-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .branding-layout--right .branding-content { order: 1; }
+  .branding-layout--right .branding-visual { order: 2; }
+  .branding-layout--left .branding-content { order: 2; }
+  .branding-layout--left .branding-visual { order: 1; }
+
+  /* ============ CONTENT ============ */
+  .branding-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .branding-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--branding-badge-bg, #f4f4f5);
+    color: var(--branding-badge-text, #18181b);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+
+  .branding-badge__icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .branding-title {
+    font-size: var(--branding-title-size, 44px);
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--branding-text, #18181b);
+    margin: 0 0 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .branding-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--branding-desc, #71717a);
+    margin: 0 0 32px;
+    max-width: 520px;
+  }
+
+  .branding-description p { margin: 0 0 12px; }
+  .branding-description p:last-child { margin-bottom: 0; }
+
+  /* ============ FEATURES ============ */
+  .branding-features {
+    list-style: none;
+    margin: 0 0 36px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .branding-feature {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 22px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    background-color: var(--branding-feature-bg, #ffffff);
+    color: var(--branding-feature-text, #18181b);
+    font-size: 15px;
+    font-weight: 500;
+    width: fit-content;
+    max-width: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .branding-feature:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .branding-feature__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--branding-feature-icon-bg, #f4f4f5);
+    color: var(--branding-feature-icon-color, #18181b);
+    flex-shrink: 0;
+  }
+
+  .branding-feature__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ============ BUTTON ============ */
+  .branding-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--branding-btn-from, #f9a8d4), var(--branding-btn-to, #ec4899));
+    color: var(--branding-btn-text, #ffffff);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  .branding-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+  }
+
+  .branding-button:active {
+    transform: translateY(0);
+  }
+
+  /* ============ VISUAL ============ */
+  .branding-visual {
+    width: 100%;
+  }
+
+  .branding-visual__inner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #fafafa 0%, #f4f4f5 100%);
+    border-radius: var(--branding-radius, 24px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .branding-image-wrap {
+    width: 100%;
+    height: 100%;
+    background-color: var(--branding-image-bg, transparent);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .branding-image-wrap--placeholder svg {
+    width: 60%;
+    height: auto;
+    opacity: 0.4;
+  }
+
+  .branding-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ============ DECORATIONS ============ */
+  .branding-deco {
+    position: absolute;
+    color: var(--branding-decoration, #ec4899);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .branding-deco--smile {
+    width: 56px;
+    height: 56px;
+    top: 8%;
+    left: 6%;
+  }
+
+  .branding-deco--lines {
+    width: 36px;
+    height: 36px;
+    top: 12%;
+    right: 12%;
+  }
+
+  .branding-deco--swirl {
+    width: 80px;
+    height: 60px;
+    bottom: 6%;
+    right: 6%;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 989px) {
+    .branding-section {
+      padding: var(--branding-pt-mobile, 60px) 16px var(--branding-pb-mobile, 60px);
+    }
+
+    .branding-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    /* On mobile, content is always above image (matches Image 2) */
+    .branding-layout--left .branding-content,
+    .branding-layout--right .branding-content { order: 1; }
+    .branding-layout--left .branding-visual,
+    .branding-layout--right .branding-visual { order: 2; }
+
+    .branding-content {
+      align-items: center;
+      text-align: center;
+    }
+
+    .branding-title {
+      font-size: var(--branding-title-size-mobile, 28px);
+    }
+
+    .branding-description {
+      text-align: center;
+    }
+
+    .branding-features {
+      align-items: stretch;
+    }
+
+    .branding-feature {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .branding-visual__inner {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .branding-title {
+      font-size: 24px;
+    }
+
+    .branding-description {
+      font-size: 15px;
+    }
+
+    .branding-feature {
+      font-size: 14px;
+      padding: 12px 18px;
+    }
+
+    .branding-button {
+      width: 100%;
+      padding: 14px 24px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Section Branding",
+  "tag": "section",
+  "class": "section-branding-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Mise en page"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Position de l'image (Desktop)",
+      "options": [
+        { "value": "right", "label": "À droite" },
+        { "value": "left", "label": "À gauche" }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Afficher le badge",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge_icon",
+      "label": "Afficher l'icône du badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Texte du badge",
+      "default": "Branding"
+    },
+    {
+      "type": "header",
+      "content": "Contenu principal"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Envie de plus ? Un branding complet pour votre marque"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Notre agence ne propose pas seulement des sites web, mais aussi la création d'un branding pour sublimer votre marque.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Bouton"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte du bouton",
+      "default": "Réserver un appel"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_decorations",
+      "label": "Afficher les décorations (smiley, traits)",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Rayon des coins de l'image",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Couleurs - Section"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du titre",
+      "default": "#18181b"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Couleur de la description",
+      "default": "#71717a"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs - Badge"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Fond du badge",
+      "default": "#f4f4f5"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Texte du badge",
+      "default": "#18181b"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs - Features"
+    },
+    {
+      "type": "color",
+      "id": "feature_bg",
+      "label": "Fond des items",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "feature_text_color",
+      "label": "Texte des items",
+      "default": "#18181b"
+    },
+    {
+      "type": "color",
+      "id": "feature_icon_bg",
+      "label": "Fond des icônes",
+      "default": "#f4f4f5"
+    },
+    {
+      "type": "color",
+      "id": "feature_icon_color",
+      "label": "Couleur des icônes",
+      "default": "#18181b"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs - Bouton"
+    },
+    {
+      "type": "color",
+      "id": "button_color_from",
+      "label": "Dégradé - couleur 1",
+      "default": "#f9a8d4"
+    },
+    {
+      "type": "color",
+      "id": "button_color_to",
+      "label": "Dégradé - couleur 2",
+      "default": "#ec4899"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texte du bouton",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs - Image"
+    },
+    {
+      "type": "color",
+      "id": "image_bg_color",
+      "label": "Couleur de fond derrière l'image",
+      "default": "#FFD93D"
+    },
+    {
+      "type": "color",
+      "id": "decoration_color",
+      "label": "Couleur des décorations",
+      "default": "#ec4899"
+    },
+    {
+      "type": "header",
+      "content": "Tailles & Espacements"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille du titre (Desktop)",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille du titre (Mobile)",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding haut (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bas (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding haut (Mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bas (Mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Item / Avantage",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+            { "value": "users", "label": "Personnes" },
+            { "value": "diamond", "label": "Diamant" },
+            { "value": "typography", "label": "Typographie" },
+            { "value": "star", "label": "Étoile" },
+            { "value": "check", "label": "Coche" },
+            { "value": "heart", "label": "Cœur" },
+            { "value": "palette", "label": "Palette" },
+            { "value": "lightbulb", "label": "Ampoule" },
+            { "value": "rocket", "label": "Fusée" },
+            { "value": "target", "label": "Cible" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Avantage à mettre en avant"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Branding",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "users",
+            "text": "Création de logos inoubliables et distinctifs"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "diamond",
+            "text": "Création de chartes graphiques élégantes"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "typography",
+            "text": "Sélection de typographies percutantes"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
