@@ -109,9 +109,9 @@
         "title_size": 24,
         "title_alignment": "center",
         "card_width": 260,
-        "card_text_size": 13,
-        "card_height": 52,
-        "card_padding": 18,
+        "card_text_size": 14,
+        "card_height": 50,
+        "card_padding": 16,
         "text_alignment": "center",
         "button_label": "All Products",
         "button_link": ""
