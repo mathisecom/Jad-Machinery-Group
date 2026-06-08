@@ -79,7 +79,9 @@
     },
     "featured_collection_eeyqP4": {
       "type": "featured-collection",
-      "custom_css": [],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {.product-grid {display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; } .product-grid .grid__item {width: 100% !important; max-width: 100% !important; } .card__heading, .price {font-size: 13px !important; }}"
+      ],
       "name": "Featured collection",
       "settings": {
         "collection": "",
