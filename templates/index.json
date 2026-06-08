@@ -110,6 +110,22 @@
         "product_card_text_color": ""
       }
     },
+    "scrolling_text_47nc8w": {
+      "type": "scrolling-text",
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "Promotion text",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "text_gradient": ""
+      }
+    },
     "sectionbranding_8YUTBp": {
       "type": "sectionbranding",
       "blocks": {
@@ -343,6 +359,7 @@
     "slideshow_QbpYbc",
     "rich_text_Gf8Txb",
     "featured_collection_eeyqP4",
+    "scrolling_text_47nc8w",
     "sectionbranding_8YUTBp",
     "rich_text_qfqFge",
     "testimonials_DVfhTy",
