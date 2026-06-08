@@ -79,6 +79,26 @@
           "type": "quantity_selector",
           "disabled": true,
           "settings": {}
+        },
+        "collapsible_text_WmQ4pL": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Title",
+            "content": "<p>Share some content to your customers about your products.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_BrVnQr": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Title",
+            "content": "<p>Share some content to your customers about your products.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -91,7 +111,9 @@
         "description",
         "button_49JVAD",
         "variant_picker",
-        "quantity_selector"
+        "quantity_selector",
+        "collapsible_text_WmQ4pL",
+        "collapsible_text_BrVnQr"
       ],
       "settings": {
         "full_width": true,
