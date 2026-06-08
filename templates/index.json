@@ -80,7 +80,11 @@
     "featured_collection_eeyqP4": {
       "type": "featured-collection",
       "custom_css": [
-        "@media screen and (max-width: 749px) {slider-component ul, .slider, .product-grid {display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; overflow: visible !important; } slider-component li, .slider__slide, .grid__item {width: 100% !important; max-width: 100% !important; min-width: 0 !important; } .slider-buttons {display: none !important; }}"
+        "@media screen and (max-width: 699px) {.product-list {--product-list-carousel-item-width: 46vw !important; }}",
+        ".product-card__figure {position: relative;}",
+        ".product-card__figure::before,.product-card__figure::after {position: absolute; top: 8px; padding: 5px 10px; border-radius: 99px; font: 600 12px Arial; z-index: 5;}",
+        ".price-list {position: relative;}",
+        ".price-list sale-price,.price-list .sale-price {font-size: 22px; font-weight: 800;}"
       ],
       "name": "Featured collection",
       "settings": {
