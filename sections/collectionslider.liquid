@@ -12,10 +12,14 @@
 <section
   class="jmg-collection-slider"
   data-text-align="{{ section.settings.text_alignment }}"
+  data-title-align="{{ section.settings.title_alignment }}"
   style="
     --jmg-section-bg: {{ section.settings.section_bg_color }};
     --jmg-title-size: {{ section.settings.title_size }}px;
+    --jmg-title-align: {{ section.settings.title_alignment }};
     --jmg-card-text-size: {{ section.settings.card_text_size }}px;
+    --jmg-card-height: {{ section.settings.card_height }}px;
+    --jmg-card-padding: {{ section.settings.card_padding }}px;
     --jmg-text-align: {{ section.settings.text_alignment }};
   "
 >
@@ -136,6 +140,14 @@
   margin-bottom: 28px;
 }
 
+.jmg-collection-slider[data-title-align="center"] .jmg-collection-slider__header {
+  justify-content: center;
+}
+
+.jmg-collection-slider[data-title-align="right"] .jmg-collection-slider__header {
+  justify-content: flex-end;
+}
+
 .jmg-collection-slider__title {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
@@ -145,7 +157,8 @@
   color: #183052;
   text-transform: uppercase;
   letter-spacing: -0.035em;
-  text-align: var(--jmg-text-align, left);
+  text-align: var(--jmg-title-align, left);
+  width: 100%;
 }
 
 .jmg-collection-slider__button {
@@ -190,13 +203,13 @@
 
 .jmg-collection-slider__track {
   display: grid;
-  grid-template-columns: repeat(5, minmax(220px, 1fr));
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
   gap: 12px;
 }
 
 .jmg-collection-card {
-  min-height: 88px;
-  padding: 0 28px;
+  min-height: var(--jmg-card-height, 70px);
+  padding: 0 var(--jmg-card-padding, 20px);
   background: #183052;
   color: #ffffff;
   border-radius: 6px;
@@ -204,7 +217,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 14px;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
@@ -235,16 +248,16 @@
 .jmg-collection-card__content {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   min-width: 0;
   position: relative;
   z-index: 2;
 }
 
 .jmg-collection-card__icon {
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -252,8 +265,8 @@
 }
 
 .jmg-collection-card__icon svg {
-  width: 24px;
-  height: 24px;
+  width: 21px;
+  height: 21px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2.2;
@@ -262,7 +275,7 @@
 }
 
 .jmg-collection-card__title {
-  font-size: var(--jmg-card-text-size, 19px);
+  font-size: var(--jmg-card-text-size, 17px);
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
@@ -272,9 +285,9 @@
 }
 
 .jmg-collection-card__arrow {
-  width: 24px;
-  height: 24px;
-  min-width: 24px;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -285,8 +298,8 @@
 }
 
 .jmg-collection-card__arrow svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2.4;
@@ -298,7 +311,7 @@
   transform: translateX(3px);
 }
 
-/* Alignement centré */
+/* Alignement centré des cartes */
 .jmg-collection-slider[data-text-align="center"] .jmg-collection-card {
   justify-content: center;
 }
@@ -311,7 +324,7 @@
   display: none;
 }
 
-/* Alignement à droite */
+/* Alignement à droite des cartes */
 .jmg-collection-slider[data-text-align="right"] .jmg-collection-card {
   justify-content: flex-end;
 }
@@ -323,7 +336,7 @@
 /* Tablet */
 @media screen and (max-width: 1199px) {
   .jmg-collection-slider__track {
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
   }
 }
 
@@ -336,6 +349,14 @@
   .jmg-collection-slider__header {
     align-items: flex-start;
     margin-bottom: 20px;
+  }
+
+  .jmg-collection-slider[data-title-align="center"] .jmg-collection-slider__header {
+    align-items: center;
+  }
+
+  .jmg-collection-slider[data-title-align="right"] .jmg-collection-slider__header {
+    align-items: flex-end;
   }
 
   .jmg-collection-slider__title {
@@ -372,26 +393,26 @@
   }
 
   .jmg-collection-card {
-    width: 78vw;
-    max-width: 330px;
-    min-height: 78px;
-    padding: 0 20px;
+    width: 72vw;
+    max-width: 300px;
+    min-height: var(--jmg-card-height, 64px);
+    padding: 0 var(--jmg-card-padding, 16px);
     border-radius: 6px;
   }
 
   .jmg-collection-card__title {
-    font-size: var(--jmg-card-text-size, 17px);
+    font-size: var(--jmg-card-text-size, 16px);
   }
 
   .jmg-collection-card__icon {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
   }
 
   .jmg-collection-card__icon svg {
-    width: 21px;
-    height: 21px;
+    width: 19px;
+    height: 19px;
   }
 }
 
@@ -402,12 +423,20 @@
     gap: 14px;
   }
 
+  .jmg-collection-slider[data-title-align="center"] .jmg-collection-slider__header {
+    align-items: center;
+  }
+
+  .jmg-collection-slider[data-title-align="right"] .jmg-collection-slider__header {
+    align-items: flex-end;
+  }
+
   .jmg-collection-slider__button {
     width: 100%;
   }
 
   .jmg-collection-card {
-    width: 84vw;
+    width: 78vw;
   }
 }
 
@@ -442,19 +471,59 @@
       "default": 28
     },
     {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Alignement du titre",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centré"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ],
+      "default": "left"
+    },
+    {
       "type": "range",
       "id": "card_text_size",
-      "label": "Taille du texte des cartes",
+      "label": "Taille du texte des collections",
       "min": 12,
       "max": 36,
       "step": 1,
       "unit": "px",
-      "default": 19
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "card_height",
+      "label": "Hauteur des encadrés",
+      "min": 50,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Espacement intérieur des encadrés",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
     },
     {
       "type": "select",
       "id": "text_alignment",
-      "label": "Alignement du texte",
+      "label": "Alignement du texte des collections",
       "options": [
         {
           "value": "left",
