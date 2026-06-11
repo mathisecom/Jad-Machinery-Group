@@ -344,7 +344,7 @@
         "image_content_bottom_desktop": 44,
         "image_content_left_mobile": 26,
         "image_content_bottom_mobile": 30,
-        "card_background": "#FFFFFF",
+        "card_background": "#eff9ff",
         "card_radius": 24,
         "card_padding_desktop": 36,
         "card_padding_mobile": 28,
@@ -356,8 +356,8 @@
         "card_title_size_mobile": 21,
         "card_text_size_desktop": 15,
         "card_text_size_mobile": 14,
-        "icon_background": "#C8FF3D",
-        "icon_color": "#000000",
+        "icon_background": "#183052",
+        "icon_color": "#ffffff",
         "icon_size": 58,
         "icon_inner_size": 34
       }
