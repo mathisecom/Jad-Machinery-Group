@@ -195,6 +195,95 @@
         "lazy": true
       }
     },
+    "imgbenefices_3BQpCg": {
+      "type": "imgbenefices",
+      "blocks": {
+        "feature_card_ea7eFA": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "location",
+            "title": "Un maillage national",
+            "text": "<p>Il y aura toujours un technicien Alpagga à deux pas de chez vous.</p>"
+          }
+        },
+        "feature_card_VGbYVr": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "letter",
+            "title": "Dépannage – SAV",
+            "text": "<p>Nos techniciens interviennent chez vous 7j/7 partout en France.</p>"
+          }
+        },
+        "feature_card_aUaief": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Un bureau d’étude",
+            "text": "<p>Nos experts au service de vos projets.</p>"
+          }
+        },
+        "feature_card_xUzeKm": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "tool",
+            "title": "Maintenance préventive",
+            "text": "<p>Rallongez la durée de vie de vos équipements en prévoyant 1 à 6 visites par an.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_card_ea7eFA",
+        "feature_card_VGbYVr",
+        "feature_card_aUaief",
+        "feature_card_xUzeKm"
+      ],
+      "name": "Mission + cartes",
+      "settings": {
+        "section_background": "#ffffff",
+        "container_max_width": 1220,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_x_desktop": 80,
+        "padding_x_mobile": 12,
+        "grid_gap": 28,
+        "image_card_height_desktop": 360,
+        "image_card_height_mobile": 420,
+        "image_card_radius": 16,
+        "overlay_opacity": 80,
+        "image_title": "Notre mission :",
+        "image_italic_title": "simplifier votre quotidien",
+        "image_text": "<p>Notre équipe est à votre écoute pour vous accompagner dans tous vos projets.</p>",
+        "image_title_color": "#FFFFFF",
+        "image_italic_color": "#C8FF3D",
+        "image_text_color": "#FFFFFF",
+        "image_title_size_desktop": 44,
+        "image_title_size_mobile": 34,
+        "image_italic_size_desktop": 48,
+        "image_italic_size_mobile": 30,
+        "image_text_size_desktop": 20,
+        "image_text_size_mobile": 15,
+        "image_content_left_desktop": 44,
+        "image_content_bottom_desktop": 44,
+        "image_content_left_mobile": 26,
+        "image_content_bottom_mobile": 30,
+        "card_background": "#eff9ff",
+        "card_radius": 24,
+        "card_padding_desktop": 36,
+        "card_padding_mobile": 28,
+        "card_min_height_desktop": 280,
+        "card_min_height_mobile": 220,
+        "card_title_color": "#062E1B",
+        "card_text_color": "#062E1B",
+        "card_title_size_desktop": 28,
+        "card_title_size_mobile": 21,
+        "card_text_size_desktop": 15,
+        "card_text_size_mobile": 14,
+        "icon_background": "#183052",
+        "icon_color": "#ffffff",
+        "icon_size": 58,
+        "icon_inner_size": 34
+      }
+    },
     "rich_text_Gf8Txb": {
       "type": "rich-text",
       "blocks": {
@@ -271,95 +360,6 @@
         "background_gradient": "",
         "text_color": "",
         "text_gradient": ""
-      }
-    },
-    "imgbenefices_3BQpCg": {
-      "type": "imgbenefices",
-      "blocks": {
-        "feature_card_ea7eFA": {
-          "type": "feature_card",
-          "settings": {
-            "icon": "location",
-            "title": "Un maillage national",
-            "text": "<p>Il y aura toujours un technicien Alpagga à deux pas de chez vous.</p>"
-          }
-        },
-        "feature_card_VGbYVr": {
-          "type": "feature_card",
-          "settings": {
-            "icon": "letter",
-            "title": "Dépannage – SAV",
-            "text": "<p>Nos techniciens interviennent chez vous 7j/7 partout en France.</p>"
-          }
-        },
-        "feature_card_aUaief": {
-          "type": "feature_card",
-          "settings": {
-            "icon": "clipboard",
-            "title": "Un bureau d’étude",
-            "text": "<p>Nos experts au service de vos projets.</p>"
-          }
-        },
-        "feature_card_xUzeKm": {
-          "type": "feature_card",
-          "settings": {
-            "icon": "tool",
-            "title": "Maintenance préventive",
-            "text": "<p>Rallongez la durée de vie de vos équipements en prévoyant 1 à 6 visites par an.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "feature_card_ea7eFA",
-        "feature_card_VGbYVr",
-        "feature_card_aUaief",
-        "feature_card_xUzeKm"
-      ],
-      "name": "Mission + cartes",
-      "settings": {
-        "section_background": "#ffffff",
-        "container_max_width": 1220,
-        "padding_top": 24,
-        "padding_bottom": 24,
-        "padding_x_desktop": 80,
-        "padding_x_mobile": 12,
-        "grid_gap": 28,
-        "image_card_height_desktop": 360,
-        "image_card_height_mobile": 420,
-        "image_card_radius": 24,
-        "overlay_opacity": 80,
-        "image_title": "Notre mission :",
-        "image_italic_title": "simplifier votre quotidien",
-        "image_text": "<p>Notre équipe est à votre écoute pour vous accompagner dans tous vos projets.</p>",
-        "image_title_color": "#FFFFFF",
-        "image_italic_color": "#C8FF3D",
-        "image_text_color": "#FFFFFF",
-        "image_title_size_desktop": 44,
-        "image_title_size_mobile": 38,
-        "image_italic_size_desktop": 48,
-        "image_italic_size_mobile": 38,
-        "image_text_size_desktop": 20,
-        "image_text_size_mobile": 18,
-        "image_content_left_desktop": 44,
-        "image_content_bottom_desktop": 44,
-        "image_content_left_mobile": 26,
-        "image_content_bottom_mobile": 30,
-        "card_background": "#eff9ff",
-        "card_radius": 24,
-        "card_padding_desktop": 36,
-        "card_padding_mobile": 28,
-        "card_min_height_desktop": 280,
-        "card_min_height_mobile": 220,
-        "card_title_color": "#062E1B",
-        "card_text_color": "#062E1B",
-        "card_title_size_desktop": 28,
-        "card_title_size_mobile": 21,
-        "card_text_size_desktop": 15,
-        "card_text_size_mobile": 14,
-        "icon_background": "#183052",
-        "icon_color": "#ffffff",
-        "icon_size": 58,
-        "icon_inner_size": 34
       }
     },
     "sectionbranding_8YUTBp": {
@@ -718,10 +718,10 @@
     "slideshow_QbpYbc",
     "collectionslider_LCTrba",
     "logoscroll_RcBDcd",
+    "imgbenefices_3BQpCg",
     "rich_text_Gf8Txb",
     "featured_collection_eeyqP4",
     "scrolling_text_47nc8w",
-    "imgbenefices_3BQpCg",
     "sectionbranding_8YUTBp",
     "hero_media_NATDUC",
     "rich_text_qfqFge",
