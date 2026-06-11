@@ -430,25 +430,18 @@
     "faq_YNfatD": {
       "type": "faq",
       "blocks": {
-        "item_LU73qY": {
-          "type": "item",
-          "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
-          }
-        },
         "item_pDimHp": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
+            "title": "How can I see the equipment prices?",
             "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
           }
         },
         "item_bKQ3tb": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "How do I find the bakery equipment I need?",
+            "content": "<p>Searching for equipment on our website is simple and convenient. You have two options to find the equipment you’re looking for. Firstly, you can explore our header menu or the left sidebar where we have organized our equipment into different categories.</p><p>This allows you to browse through specific sections related to your needs. Alternatively, you can utilize the search box. Just enter the keywords or specific product names you are interested in, and the search feature will provide you with relevant results.</p>"
           }
         },
         "item_rHcNKi": {
@@ -457,13 +450,36 @@
             "title": "What payment methods do we accept?",
             "content": "<p>We primarily accept bank transfers as our preferred payment method. This allows you to conveniently transfer funds directly from your bank account to ours. Bank transfers provide a secure and reliable way to complete your payment.</p><p>If you have any further questions or need assistance regarding payment methods, please don’t hesitate to reach out to our customer support team. We are here to help!</p>"
           }
+        },
+        "item_HhXHNy": {
+          "type": "item",
+          "settings": {
+            "title": "Do you offer financing options?",
+            "content": "<p>Yes, we do offer financing options for major equipment purchases. However, the availability of financing depends on various factors and may vary on a case-by-case basis. For more information about financing options and to discuss your specific requirements contact our customer support team. They will be happy to provide you with detailed information and guide you through the financing process.</p>"
+          }
+        },
+        "item_gH67YV": {
+          "type": "item",
+          "settings": {
+            "title": "Do you handle customs documentation for international orders?",
+            "content": "<p>Yes, we handle all the necessary customs documentation to ensure a hassle-free delivery of your bakery machine to your country. Our team takes care of the required paperwork, including customs declarations and any other relevant documentation, to facilitate the smooth transit of your equipment. </p><p>We strive to provide a comprehensive service that covers all aspects of international shipping and customs clearance, so you can focus on receiving your bakery machine without any unnecessary complications.</p>"
+          }
+        },
+        "item_6mDDAj": {
+          "type": "item",
+          "settings": {
+            "title": "Do you offer installation and setup services?",
+            "content": "<p>Yes, we offer installation and setup services for our bakery machinery. Once an agreement is reached, our dedicated team will be dispatched to your location to handle the installation process. </p><p>Our team will not only install the machinery but also conduct dry tests to ensure everything is functioning properly. If requested, we can also perform a full capacity test to ensure optimal performance.</p>"
+          }
         }
       },
       "block_order": [
-        "item_LU73qY",
         "item_pDimHp",
         "item_bKQ3tb",
-        "item_rHcNKi"
+        "item_rHcNKi",
+        "item_HhXHNy",
+        "item_gH67YV",
+        "item_6mDDAj"
       ],
       "name": "FAQ",
       "settings": {
