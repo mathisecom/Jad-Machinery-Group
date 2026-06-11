@@ -463,7 +463,7 @@
         "section_background": "#ffffff",
         "card_max_width": 1420,
         "card_height_desktop": 470,
-        "card_height_mobile": 550,
+        "card_height_mobile": 510,
         "card_radius_desktop": 16,
         "card_radius_mobile": 16,
         "padding_top": 60,
