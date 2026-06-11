@@ -461,8 +461,8 @@
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "FAQ",
-        "content": "",
+        "title": "",
+        "content": "<h4>FREQUENTLY ASKED QUESTION</h4>",
         "team_avatar_width": 160,
         "support_hours": "",
         "answer_time": "",
