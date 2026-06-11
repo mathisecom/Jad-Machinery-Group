@@ -1,0 +1,893 @@
+<section
+  class="up-mission-section"
+  style="
+    --section-bg: {{ section.settings.section_background }};
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --section-padding-x-desktop: {{ section.settings.padding_x_desktop }}px;
+    --section-padding-x-mobile: {{ section.settings.padding_x_mobile }}px;
+
+    --container-max-width: {{ section.settings.container_max_width }}px;
+    --grid-gap: {{ section.settings.grid_gap }}px;
+
+    --image-card-radius: {{ section.settings.image_card_radius }}px;
+    --image-card-height-desktop: {{ section.settings.image_card_height_desktop }}px;
+    --image-card-height-mobile: {{ section.settings.image_card_height_mobile }}px;
+    --overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+
+    --image-content-left-desktop: {{ section.settings.image_content_left_desktop }}px;
+    --image-content-bottom-desktop: {{ section.settings.image_content_bottom_desktop }}px;
+    --image-content-left-mobile: {{ section.settings.image_content_left_mobile }}px;
+    --image-content-bottom-mobile: {{ section.settings.image_content_bottom_mobile }}px;
+
+    --image-title-color: {{ section.settings.image_title_color }};
+    --image-italic-color: {{ section.settings.image_italic_color }};
+    --image-text-color: {{ section.settings.image_text_color }};
+    --image-title-size-desktop: {{ section.settings.image_title_size_desktop }}px;
+    --image-title-size-mobile: {{ section.settings.image_title_size_mobile }}px;
+    --image-italic-size-desktop: {{ section.settings.image_italic_size_desktop }}px;
+    --image-italic-size-mobile: {{ section.settings.image_italic_size_mobile }}px;
+    --image-text-size-desktop: {{ section.settings.image_text_size_desktop }}px;
+    --image-text-size-mobile: {{ section.settings.image_text_size_mobile }}px;
+
+    --card-bg: {{ section.settings.card_background }};
+    --card-radius: {{ section.settings.card_radius }}px;
+    --card-padding-desktop: {{ section.settings.card_padding_desktop }}px;
+    --card-padding-mobile: {{ section.settings.card_padding_mobile }}px;
+    --card-min-height-desktop: {{ section.settings.card_min_height_desktop }}px;
+    --card-min-height-mobile: {{ section.settings.card_min_height_mobile }}px;
+
+    --icon-bg: {{ section.settings.icon_background }};
+    --icon-color: {{ section.settings.icon_color }};
+    --icon-size: {{ section.settings.icon_size }}px;
+    --icon-inner-size: {{ section.settings.icon_inner_size }}px;
+
+    --card-title-color: {{ section.settings.card_title_color }};
+    --card-text-color: {{ section.settings.card_text_color }};
+    --card-title-size-desktop: {{ section.settings.card_title_size_desktop }}px;
+    --card-title-size-mobile: {{ section.settings.card_title_size_mobile }}px;
+    --card-text-size-desktop: {{ section.settings.card_text_size_desktop }}px;
+    --card-text-size-mobile: {{ section.settings.card_text_size_mobile }}px;
+  "
+>
+  <div class="up-mission-container">
+    <div class="up-mission-grid">
+
+      <div class="up-mission-image-card">
+        {% if section.settings.main_image != blank %}
+          <picture>
+            {% if section.settings.main_image_mobile != blank %}
+              <source
+                media="(max-width: 749px)"
+                srcset="{{ section.settings.main_image_mobile | image_url: width: 900 }}"
+              >
+            {% endif %}
+            <img
+              class="up-mission-image"
+              src="{{ section.settings.main_image | image_url: width: 1400 }}"
+              alt="{{ section.settings.main_image.alt | escape }}"
+              loading="lazy"
+            >
+          </picture>
+        {% else %}
+          <div class="up-mission-placeholder">
+            Ajoute une image
+          </div>
+        {% endif %}
+
+        <div class="up-mission-image-overlay"></div>
+
+        <div class="up-mission-image-content">
+          {% if section.settings.image_title != blank %}
+            <h2 class="up-mission-image-title">
+              {{ section.settings.image_title }}
+              {% if section.settings.image_italic_title != blank %}
+                <span>{{ section.settings.image_italic_title }}</span>
+              {% endif %}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.image_text != blank %}
+            <div class="up-mission-image-text">
+              {{ section.settings.image_text }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="up-mission-cards-grid">
+        {% for block in section.blocks %}
+          <div class="up-mission-card" {{ block.shopify_attributes }}>
+            <div class="up-mission-icon">
+              {% if block.settings.custom_icon != blank %}
+                <img
+                  src="{{ block.settings.custom_icon | image_url: width: 120 }}"
+                  alt=""
+                  loading="lazy"
+                >
+              {% else %}
+                {% case block.settings.icon %}
+                  {% when 'location' %}
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7Zm0 17.05C9.83 16.42 7 12.28 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 3.28-2.83 7.42-5 10.05ZM12 6.5A2.5 2.5 0 1 0 12 11.5 2.5 2.5 0 0 0 12 6.5Z"/>
+                    </svg>
+                  {% when 'letter' %}
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 20h16v-2H4v2Zm5.1-4h2.12l.78-2.2h4L16.78 16h2.12L15.05 5h-2.1L9.1 16Zm3.52-4 1.38-3.92L15.38 12h-2.76Z"/>
+                    </svg>
+                  {% when 'clipboard' %}
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M9 2h6a2 2 0 0 1 2 2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2-2Zm0 4h6V4H9v2ZM5 6v14h14V6h-2v2H7V6H5Z"/>
+                    </svg>
+                  {% when 'tool' %}
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M22 19.59 12.41 10A6.5 6.5 0 0 0 4.52 2.11l3.54 3.54-2.83 2.83L1.69 4.94A6.5 6.5 0 0 0 9.59 12.83L19.17 22.41 22 19.59Zm-3.54-.01-9.6-9.6-.74.22A4.5 4.5 0 0 1 3.5 5.59l1.73 1.73 5.66-5.66L9.16 0A4.5 4.5 0 0 1 13.8 4.62l-.22.74 9.6 9.6-1.41 1.41Z"/>
+                    </svg>
+                  {% else %}
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3 6.7 3.7L12 11.7 5.3 8 12 4.3ZM5 9.7l6 3.3v6.7l-6-3.3V9.7Zm8 10V13l6-3.3v6.7l-6 3.3Z"/>
+                    </svg>
+                {% endcase %}
+              {% endif %}
+            </div>
+
+            {% if block.settings.title != blank %}
+              <h3 class="up-mission-card-title">
+                {{ block.settings.title }}
+              </h3>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <div class="up-mission-card-text">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .up-mission-section {
+    background: var(--section-bg);
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+    padding-left: var(--section-padding-x-desktop);
+    padding-right: var(--section-padding-x-desktop);
+    overflow: hidden;
+  }
+
+  .up-mission-container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+  }
+
+  .up-mission-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1.75fr;
+    gap: var(--grid-gap);
+    align-items: stretch;
+  }
+
+  .up-mission-image-card {
+    position: relative;
+    min-height: var(--image-card-height-desktop);
+    border-radius: var(--image-card-radius);
+    overflow: hidden;
+    background: #111111;
+    isolation: isolate;
+  }
+
+  .up-mission-image-card picture,
+  .up-mission-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .up-mission-image {
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+  }
+
+  .up-mission-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: #1f1f1f;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body-family);
+  }
+
+  .up-mission-image-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0) 30%,
+      rgba(0,0,0,var(--overlay-opacity)) 100%
+    );
+    pointer-events: none;
+  }
+
+  .up-mission-image-content {
+    position: absolute;
+    z-index: 3;
+    left: var(--image-content-left-desktop);
+    bottom: var(--image-content-bottom-desktop);
+    width: calc(100% - (var(--image-content-left-desktop) * 2));
+    color: var(--image-text-color);
+  }
+
+  .up-mission-image-title {
+    margin: 0 0 16px;
+    color: var(--image-title-color);
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    font-style: var(--font-heading-style);
+    font-size: var(--image-title-size-desktop);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+
+  .up-mission-image-title span {
+    display: block;
+    color: var(--image-italic-color);
+    font-size: var(--image-italic-size-desktop);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+  }
+
+  .up-mission-image-text {
+    max-width: 620px;
+    color: var(--image-text-color);
+    font-family: var(--font-body-family);
+    font-weight: var(--font-body-weight);
+    font-style: var(--font-body-style);
+    font-size: var(--image-text-size-desktop);
+    line-height: 1.42;
+  }
+
+  .up-mission-image-text p {
+    margin: 0;
+  }
+
+  .up-mission-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--grid-gap);
+  }
+
+  .up-mission-card {
+    min-height: var(--card-min-height-desktop);
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    padding: var(--card-padding-desktop);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .up-mission-icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    min-width: var(--icon-size);
+    border-radius: 999px;
+    background: var(--icon-bg);
+    color: var(--icon-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 34px;
+  }
+
+  .up-mission-icon svg {
+    width: var(--icon-inner-size);
+    height: var(--icon-inner-size);
+    fill: currentColor;
+    display: block;
+  }
+
+  .up-mission-icon img {
+    width: var(--icon-inner-size);
+    height: var(--icon-inner-size);
+    object-fit: contain;
+    display: block;
+  }
+
+  .up-mission-card-title {
+    margin: 0 0 8px;
+    color: var(--card-title-color);
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    font-style: var(--font-heading-style);
+    font-size: var(--card-title-size-desktop);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .up-mission-card-text {
+    color: var(--card-text-color);
+    font-family: var(--font-body-family);
+    font-weight: var(--font-body-weight);
+    font-style: var(--font-body-style);
+    font-size: var(--card-text-size-desktop);
+    line-height: 1.45;
+  }
+
+  .up-mission-card-text p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .up-mission-section {
+      padding-left: var(--section-padding-x-mobile);
+      padding-right: var(--section-padding-x-mobile);
+    }
+
+    .up-mission-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .up-mission-image-card {
+      min-height: var(--image-card-height-mobile);
+    }
+
+    .up-mission-image-content {
+      left: var(--image-content-left-mobile);
+      bottom: var(--image-content-bottom-mobile);
+      width: calc(100% - (var(--image-content-left-mobile) * 2));
+    }
+
+    .up-mission-image-title {
+      font-size: var(--image-title-size-mobile);
+      margin-bottom: 12px;
+    }
+
+    .up-mission-image-title span {
+      font-size: var(--image-italic-size-mobile);
+    }
+
+    .up-mission-image-text {
+      font-size: var(--image-text-size-mobile);
+      line-height: 1.45;
+    }
+
+    .up-mission-cards-grid {
+      display: flex;
+      gap: var(--grid-gap);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+
+    .up-mission-cards-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .up-mission-card {
+      flex: 0 0 84%;
+      min-height: var(--card-min-height-mobile);
+      padding: var(--card-padding-mobile);
+      scroll-snap-align: start;
+    }
+
+    .up-mission-icon {
+      margin-bottom: 26px;
+    }
+
+    .up-mission-card-title {
+      font-size: var(--card-title-size-mobile);
+    }
+
+    .up-mission-card-text {
+      font-size: var(--card-text-size-mobile);
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    .up-mission-image-title {
+      letter-spacing: -0.035em;
+    }
+
+    .up-mission-card-title {
+      letter-spacing: -0.035em;
+    }
+
+    .up-mission-card {
+      flex-basis: 88%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Mission + cartes",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Couleur de fond section",
+      "default": "#F6F4F1"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Largeur maximum",
+      "min": 1000,
+      "max": 1800,
+      "step": 20,
+      "default": 1560
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding haut",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bas",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_x_desktop",
+      "label": "Padding côtés PC",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_x_mobile",
+      "label": "Padding côtés mobile",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Espace entre les blocs",
+      "min": 8,
+      "max": 80,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Bloc image"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Image PC"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "range",
+      "id": "image_card_height_desktop",
+      "label": "Hauteur image PC",
+      "min": 360,
+      "max": 900,
+      "step": 10,
+      "default": 590
+    },
+    {
+      "type": "range",
+      "id": "image_card_height_mobile",
+      "label": "Hauteur image mobile",
+      "min": 360,
+      "max": 800,
+      "step": 10,
+      "default": 560
+    },
+    {
+      "type": "range",
+      "id": "image_card_radius",
+      "label": "Arrondi image",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Opacité dégradé sombre",
+      "min": 0,
+      "max": 95,
+      "step": 5,
+      "default": 80
+    },
+    {
+      "type": "text",
+      "id": "image_title",
+      "label": "Titre image",
+      "default": "Notre mission :"
+    },
+    {
+      "type": "text",
+      "id": "image_italic_title",
+      "label": "Titre italique",
+      "default": "simplifier votre quotidien"
+    },
+    {
+      "type": "richtext",
+      "id": "image_text",
+      "label": "Texte image",
+      "default": "<p>Notre équipe est à votre écoute pour vous accompagner dans tous vos projets.</p>"
+    },
+    {
+      "type": "color",
+      "id": "image_title_color",
+      "label": "Couleur titre image",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "image_italic_color",
+      "label": "Couleur titre italique",
+      "default": "#C8FF3D"
+    },
+    {
+      "type": "color",
+      "id": "image_text_color",
+      "label": "Couleur texte image",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "image_title_size_desktop",
+      "label": "Taille titre image PC",
+      "min": 28,
+      "max": 80,
+      "step": 2,
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "image_title_size_mobile",
+      "label": "Taille titre image mobile",
+      "min": 26,
+      "max": 60,
+      "step": 2,
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "image_italic_size_desktop",
+      "label": "Taille italique image PC",
+      "min": 28,
+      "max": 90,
+      "step": 2,
+      "default": 54
+    },
+    {
+      "type": "range",
+      "id": "image_italic_size_mobile",
+      "label": "Taille italique image mobile",
+      "min": 26,
+      "max": 64,
+      "step": 2,
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "image_text_size_desktop",
+      "label": "Taille texte image PC",
+      "min": 14,
+      "max": 34,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "image_text_size_mobile",
+      "label": "Taille texte image mobile",
+      "min": 13,
+      "max": 28,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "image_content_left_desktop",
+      "label": "Position gauche contenu image PC",
+      "min": 20,
+      "max": 160,
+      "step": 4,
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "image_content_bottom_desktop",
+      "label": "Position bas contenu image PC",
+      "min": 20,
+      "max": 180,
+      "step": 4,
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "image_content_left_mobile",
+      "label": "Position gauche contenu image mobile",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "image_content_bottom_mobile",
+      "label": "Position bas contenu image mobile",
+      "min": 16,
+      "max": 120,
+      "step": 2,
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Cartes"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Couleur fond cartes",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi cartes",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_padding_desktop",
+      "label": "Padding cartes PC",
+      "min": 20,
+      "max": 90,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "label": "Padding cartes mobile",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "card_min_height_desktop",
+      "label": "Hauteur minimum cartes PC",
+      "min": 180,
+      "max": 420,
+      "step": 10,
+      "default": 280
+    },
+    {
+      "type": "range",
+      "id": "card_min_height_mobile",
+      "label": "Hauteur minimum cartes mobile",
+      "min": 160,
+      "max": 360,
+      "step": 10,
+      "default": 220
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Couleur titres cartes",
+      "default": "#062E1B"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Couleur textes cartes",
+      "default": "#062E1B"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_desktop",
+      "label": "Taille titre cartes PC",
+      "min": 22,
+      "max": 54,
+      "step": 1,
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "label": "Taille titre cartes mobile",
+      "min": 20,
+      "max": 42,
+      "step": 1,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_desktop",
+      "label": "Taille texte cartes PC",
+      "min": 15,
+      "max": 34,
+      "step": 1,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_mobile",
+      "label": "Taille texte cartes mobile",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Icônes"
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "Couleur fond icône",
+      "default": "#C8FF3D"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Couleur icône",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Taille cercle icône",
+      "min": 36,
+      "max": 90,
+      "step": 2,
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "icon_inner_size",
+      "label": "Taille icône",
+      "min": 18,
+      "max": 54,
+      "step": 2,
+      "default": 34
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_card",
+      "name": "Carte",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône SVG",
+          "options": [
+            {
+              "value": "location",
+              "label": "Localisation"
+            },
+            {
+              "value": "letter",
+              "label": "Lettre A"
+            },
+            {
+              "value": "clipboard",
+              "label": "Presse-papier"
+            },
+            {
+              "value": "tool",
+              "label": "Outil"
+            },
+            {
+              "value": "cube",
+              "label": "Cube"
+            }
+          ],
+          "default": "location"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Icône personnalisée PNG/SVG"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Un maillage national"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texte",
+          "default": "<p>Il y aura toujours un technicien Alpagga à deux pas de chez vous.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mission + cartes",
+      "blocks": [
+        {
+          "type": "feature_card",
+          "settings": {
+            "icon": "location",
+            "title": "Un maillage national",
+            "text": "<p>Il y aura toujours un technicien Alpagga à deux pas de chez vous.</p>"
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "icon": "letter",
+            "title": "Dépannage – SAV",
+            "text": "<p>Nos techniciens interviennent chez vous 7j/7 partout en France.</p>"
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Un bureau d’étude",
+            "text": "<p>Nos experts au service de vos projets.</p>"
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "icon": "tool",
+            "title": "Maintenance préventive",
+            "text": "<p>Rallongez la durée de vie de vos équipements en prévoyant 1 à 6 visites par an.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
