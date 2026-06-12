@@ -37,6 +37,7 @@
         },
         "separator": {
           "type": "separator",
+          "disabled": true,
           "settings": {}
         },
         "button_49JVAD": {
