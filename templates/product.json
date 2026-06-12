@@ -242,8 +242,41 @@
         "padding_bottom_mobile": 40
       }
     },
+    "rich_text_6y7b4j": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mNrk39": {
+          "type": "heading",
+          "settings": {
+            "text": "OUR SELECTION",
+            "heading_tag": "h3",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_mNrk39"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "featured_collection_TXGBRA": {
       "type": "featured-collection",
+      "custom_css": [
+        "@media screen and (max-width: 699px) {.product-list {--product-list-carousel-item-width: 46vw !important; }}",
+        ".product-card__figure {position: relative;}",
+        ".product-card__figure::before,.product-card__figure::after {position: absolute; top: 8px; padding: 5px 10px; border-radius: 99px; font: 600 12px Arial; z-index: 5;}",
+        ".price-list {position: relative;}",
+        ".price-list sale-price,.price-list .sale-price {font-size: 18px; font-weight: 800; color: #183052 !important;}"
+      ],
       "name": "Featured collection",
       "settings": {
         "collection": "",
@@ -258,7 +291,7 @@
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 3,
         "subheading": "",
-        "title": "OUR SELECTION",
+        "title": "",
         "content": "",
         "link_url": "",
         "link_text": "",
@@ -277,6 +310,7 @@
     "rich_text_W8zNQJ",
     "testimonials_QUUnnE",
     "sectionbranding_4ktVih",
+    "rich_text_6y7b4j",
     "featured_collection_TXGBRA"
   ]
 }
