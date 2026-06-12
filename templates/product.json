@@ -241,12 +241,42 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 40
       }
+    },
+    "featured_collection_TXGBRA": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "collection": "",
+        "products": [
+          "wp-parta-u",
+          "glimek-mo-671"
+        ],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_count": 6,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
     }
   },
   "order": [
     "main",
     "rich_text_W8zNQJ",
     "testimonials_QUUnnE",
-    "sectionbranding_4ktVih"
+    "sectionbranding_4ktVih",
+    "featured_collection_TXGBRA"
   ]
 }
