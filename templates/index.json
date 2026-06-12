@@ -470,8 +470,9 @@
       "name": "Hero média CHR",
       "settings": {
         "background_type": "video",
+        "background_video": "shopify://files/videos/4186967-hd_1920_1080_25fps.mp4",
         "background_video_url": "",
-        "overlay_opacity": 55,
+        "overlay_opacity": 70,
         "title": "New and Used Bakery",
         "title_italic": "Equipment at the Best Price",
         "description": "",
