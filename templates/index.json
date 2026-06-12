@@ -241,7 +241,7 @@
       "settings": {
         "section_background": "#ffffff",
         "container_max_width": 1400,
-        "padding_top": 80,
+        "padding_top": 32,
         "padding_bottom": 0,
         "padding_x_desktop": 80,
         "padding_x_mobile": 12,
