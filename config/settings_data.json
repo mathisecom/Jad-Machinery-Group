@@ -43,7 +43,14 @@
     "cart_icon": "shopping_cart",
     "checkout_accent_color": "#f0c417",
     "checkout_button_color": "#1a1a1a",
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "15830000824732515833": {
+        "type": "shopify://apps/sk-whatsapp-chat-button/blocks/app-embed/f26357f3-3b4f-4ccc-8c8a-a4df2fc1dfc5",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   },
   "presets": {
     "Sound": {
