@@ -124,9 +124,9 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 4,
-            "author": "John S.",
-            "title": "Testimonial 1",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "author": "Michael R., Bakery Owner",
+            "title": "Reliable and professional",
+            "content": "<p>Great bakery equipment, easy to use and perfect for our daily production. The team gave us excellent advice.</p>"
           }
         },
         "testimonial_fN4tgE": {
@@ -136,8 +136,8 @@
             "show_rating": true,
             "rating": 5,
             "author": "Mary U.",
-            "title": "Testimonial 2",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "title": "A great investment",
+            "content": "<p>The machine saves us time every day and delivers consistent results. Very happy with the purchase.</p>"
           }
         },
         "testimonial_WWRRUU": {
@@ -146,16 +146,28 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 4,
-            "author": "Joshua A.",
-            "title": "Testimonial 3",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "author": "James W., Production Manager",
+            "title": "Fast and efficient service",
+            "content": "<p>High-quality equipment with quick support whenever needed. A trustworthy supplier.</p>"
+          }
+        },
+        "testimonial_WQXWGe": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Sarah T., Bakery Owner",
+            "title": "Perfect for our bakery",
+            "content": "<p>The equipment fits our needs perfectly and helped us increase production without losing quality.</p>"
           }
         }
       },
       "block_order": [
         "testimonial_KzmGAK",
         "testimonial_fN4tgE",
-        "testimonial_WWRRUU"
+        "testimonial_WWRRUU",
+        "testimonial_WQXWGe"
       ],
       "name": "Testimonials",
       "settings": {
