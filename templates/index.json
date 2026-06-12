@@ -235,32 +235,32 @@
           "type": "feature_card",
           "settings": {
             "icon": "location",
-            "title": "Un maillage national",
-            "text": "<p>Il y aura toujours un technicien Alpagga à deux pas de chez vous.</p>"
+            "title": "Nationwide coverage",
+            "text": "<p>Wherever your bakery is located, an experienced technician is always within reach to assist you quickly and efficiently.</p>"
           }
         },
         "feature_card_VGbYVr": {
           "type": "feature_card",
           "settings": {
             "icon": "letter",
-            "title": "Dépannage – SAV",
-            "text": "<p>Nos techniciens interviennent chez vous 7j/7 partout en France.</p>"
+            "title": "Repairs & After-Sales Service",
+            "text": "<p>Our technicians provide on-site support across France to keep your bakery equipment running smoothly and reduce downtime.</p>"
           }
         },
         "feature_card_aUaief": {
           "type": "feature_card",
           "settings": {
             "icon": "clipboard",
-            "title": "Un bureau d’étude",
-            "text": "<p>Nos experts au service de vos projets.</p>"
+            "title": "A dedicated design office",
+            "text": "<p>Our experts help you plan and optimize your bakery workspace with equipment solutions tailored to your production needs.</p>"
           }
         },
         "feature_card_xUzeKm": {
           "type": "feature_card",
           "settings": {
             "icon": "tool",
-            "title": "Maintenance préventive",
-            "text": "<p>Rallongez la durée de vie de vos équipements en prévoyant 1 à 6 visites par an.</p>"
+            "title": "Preventive maintenance",
+            "text": "<p>Extend the lifespan of your bakery machines and avoid unexpected breakdowns with scheduled maintenance visits, from 1 to 6 times per year.</p>"
           }
         }
       },
@@ -283,9 +283,9 @@
         "image_card_height_mobile": 420,
         "image_card_radius": 16,
         "overlay_opacity": 80,
-        "image_title": "Notre mission :",
-        "image_italic_title": "simplifier votre quotidien",
-        "image_text": "<p>Notre équipe est à votre écoute pour vous accompagner dans tous vos projets.</p>",
+        "image_title": "Our Mission:",
+        "image_italic_title": "making your bakery operations easier",
+        "image_text": "<p>Our team is here to support you at every stage of your project, from choosing the right bakery equipment to installation, maintenance and after-sales service.</p>",
         "image_title_color": "#ffffff",
         "image_italic_color": "#eff9ff",
         "image_text_color": "#ffffff",
