@@ -135,7 +135,7 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 5,
-            "author": "Mary U.",
+            "author": "Emma L., Artisan Baker",
             "title": "A great investment",
             "content": "<p>The machine saves us time every day and delivers consistent results. Very happy with the purchase.</p>"
           }
@@ -161,13 +161,25 @@
             "title": "Perfect for our bakery",
             "content": "<p>The equipment fits our needs perfectly and helped us increase production without losing quality.</p>"
           }
+        },
+        "testimonial_K6x3zz": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "David M., Head Baker",
+            "title": "Smooth installation",
+            "content": "<p>Everything went smoothly from order to installation. Professional team and reliable machines.</p>"
+          }
         }
       },
       "block_order": [
         "testimonial_KzmGAK",
         "testimonial_fN4tgE",
         "testimonial_WWRRUU",
-        "testimonial_WQXWGe"
+        "testimonial_WQXWGe",
+        "testimonial_K6x3zz"
       ],
       "name": "Testimonials",
       "settings": {
