@@ -9,6 +9,39 @@
  */
 {
   "sections": {
+    "sectionshero_video_custom_FDJfik": {
+      "type": "sectionshero-video-custom",
+      "name": "Hero vidéo personnalisé",
+      "settings": {
+        "video": "shopify://files/videos/250b27a6a6c640b88d08264868a387f3.HD-1080p-7.2Mbps-63695453.mp4",
+        "subheading": "Depuis 1935",
+        "heading": "Le spécialiste pour\nvos créations textiles",
+        "button_label": "DISCOVER",
+        "button_link": "",
+        "video_button_label": "",
+        "video_button_link": "",
+        "desktop_height": 560,
+        "mobile_height": 500,
+        "content_width": 620,
+        "content_left_desktop": 18,
+        "text_color": "#ffffff",
+        "heading_size": 46,
+        "mobile_heading_size": 32,
+        "subheading_size": 18,
+        "mobile_subheading_size": 18,
+        "button_bg": "#183052",
+        "button_text": "#ffffff",
+        "secondary_button_text": "#ffffff",
+        "button_radius": 7,
+        "button_text_size": 14,
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "show_wave": true,
+        "wave_color": "#ffffff",
+        "wave_height": 150,
+        "mobile_wave_height": 90
+      }
+    },
     "slideshow_QbpYbc": {
       "type": "slideshow",
       "blocks": {
@@ -715,6 +748,7 @@
     }
   },
   "order": [
+    "sectionshero_video_custom_FDJfik",
     "slideshow_QbpYbc",
     "collectionslider_LCTrba",
     "logoscroll_RcBDcd",
