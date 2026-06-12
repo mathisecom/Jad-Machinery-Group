@@ -110,7 +110,7 @@
           "type": "text",
           "settings": {
             "title": "Contact US",
-            "content": "<p>jadgroup@proton.me</p>",
+            "content": "<p>Tel : +49 (0) 7455 93943-0</p><p>E-mail : jadgroup@proton.me</p>",
             "enable_follow_on_shop": true
           }
         }
