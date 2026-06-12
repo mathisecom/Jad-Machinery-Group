@@ -545,7 +545,7 @@
           "settings": {
             "round_avatar": true,
             "show_rating": true,
-            "rating": 4,
+            "rating": 5,
             "author": "Michael R., Bakery Owner",
             "title": "Reliable and professional",
             "content": "<p>Great bakery equipment, easy to use and perfect for our daily production. The team gave us excellent advice.</p>"
@@ -578,7 +578,7 @@
           "settings": {
             "round_avatar": true,
             "show_rating": true,
-            "rating": 4,
+            "rating": 5,
             "author": "Sarah T., Bakery Owner",
             "title": "Perfect for our bakery",
             "content": "<p>The equipment fits our needs perfectly and helped us increase production without losing quality.</p>"
