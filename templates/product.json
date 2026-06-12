@@ -42,7 +42,7 @@
         "button_49JVAD": {
           "type": "button",
           "settings": {
-            "link": "",
+            "link": "shopify://pages/contact",
             "text": "Request A Quote",
             "size": "xl",
             "style": "fill",
@@ -213,7 +213,7 @@
         "title": "The Refurbishment Specialist",
         "description": "<p>At <strong>Jad-Machinery-Group</strong>, we carefully inspect, refurbish, and test used bakery machines to ensure reliable, safe, and long-lasting performance, with warranty.</p>",
         "button_text": "Request A Quote",
-        "button_url": "",
+        "button_url": "shopify://pages/contact",
         "image": "shopify://shop_images/03_Interbake_BedrijfsvideoENG.00_00_33_07.Still009-scaled-720x405.jpg",
         "show_decorations": true,
         "image_radius": 24,
