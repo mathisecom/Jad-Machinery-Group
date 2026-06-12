@@ -1,0 +1,462 @@
+<section
+  id="hero-video-{{ section.id }}"
+  class="hero-video-section"
+>
+  <div class="hero-video-wrapper">
+
+    {% if section.settings.video != blank %}
+      {{
+        section.settings.video
+        | video_tag:
+          autoplay: true,
+          loop: true,
+          muted: true,
+          controls: false,
+          playsinline: true,
+          class: 'hero-video-bg'
+      }}
+    {% elsif section.settings.background_image != blank %}
+      <img
+        src="{{ section.settings.background_image | image_url: width: 2400 }}"
+        alt="{{ section.settings.heading | escape }}"
+        class="hero-video-bg"
+        loading="lazy"
+      >
+    {% endif %}
+
+    <div class="hero-video-overlay"></div>
+
+    <div class="hero-video-content page-width">
+      {% if section.settings.subheading != blank %}
+        <p class="hero-video-subheading">
+          {{ section.settings.subheading }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h1 class="hero-video-heading">
+          {{ section.settings.heading | newline_to_br }}
+        </h1>
+      {% endif %}
+
+      <div class="hero-video-buttons">
+        {% if section.settings.button_label != blank %}
+          <a
+            href="{{ section.settings.button_link }}"
+            class="hero-video-button hero-video-button-primary"
+          >
+            {{ section.settings.button_label }}
+          </a>
+        {% endif %}
+
+        {% if section.settings.video_button_label != blank %}
+          <a
+            href="{{ section.settings.video_button_link }}"
+            class="hero-video-button hero-video-button-secondary"
+          >
+            <span class="hero-video-play">▶</span>
+            {{ section.settings.video_button_label }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if section.settings.show_wave %}
+      <div class="hero-video-shape"></div>
+    {% endif %}
+
+  </div>
+</section>
+
+<style>
+  #hero-video-{{ section.id }} {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero-video-{{ section.id }} .hero-video-wrapper {
+    position: relative;
+    min-height: {{ section.settings.desktop_height }}px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #000;
+  }
+
+  #hero-video-{{ section.id }} .hero-video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  #hero-video-{{ section.id }} .hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: {{ section.settings.overlay_color }};
+    opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    z-index: 2;
+  }
+
+  #hero-video-{{ section.id }} .hero-video-content {
+    position: relative;
+    z-index: 3;
+    max-width: {{ section.settings.content_width }}px;
+    margin-left: {{ section.settings.content_left_desktop }}%;
+    margin-right: auto;
+    padding: 80px 24px;
+    color: {{ section.settings.text_color }};
+  }
+
+  #hero-video-{{ section.id }} .hero-video-subheading {
+    margin: 0 0 8px;
+    font-size: {{ section.settings.subheading_size }}px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: {{ section.settings.text_color }};
+  }
+
+  #hero-video-{{ section.id }} .hero-video-heading {
+    margin: 0;
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: {{ section.settings.text_color }};
+  }
+
+  #hero-video-{{ section.id }} .hero-video-buttons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  #hero-video-{{ section.id }} .hero-video-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: {{ section.settings.button_text_size }}px;
+    font-weight: 700;
+    line-height: 1;
+    transition: all 0.25s ease;
+  }
+
+  #hero-video-{{ section.id }} .hero-video-button-primary {
+    padding: 16px 24px;
+    border-radius: {{ section.settings.button_radius }}px;
+    background: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_text }};
+  }
+
+  #hero-video-{{ section.id }} .hero-video-button-primary:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+  }
+
+  #hero-video-{{ section.id }} .hero-video-button-secondary {
+    gap: 6px;
+    color: {{ section.settings.secondary_button_text }};
+    padding-bottom: 5px;
+    border-bottom: 2px solid {{ section.settings.secondary_button_text }};
+  }
+
+  #hero-video-{{ section.id }} .hero-video-button-secondary:hover {
+    opacity: 0.75;
+  }
+
+  #hero-video-{{ section.id }} .hero-video-play {
+    font-size: 14px;
+    transform: translateY(-1px);
+  }
+
+  #hero-video-{{ section.id }} .hero-video-shape {
+    position: absolute;
+    left: -5%;
+    right: -5%;
+    bottom: -1px;
+    height: {{ section.settings.wave_height }}px;
+    background: {{ section.settings.wave_color }};
+    z-index: 4;
+    clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  @media screen and (max-width: 749px) {
+    #hero-video-{{ section.id }} .hero-video-wrapper {
+      min-height: {{ section.settings.mobile_height }}px;
+      align-items: center;
+    }
+
+    #hero-video-{{ section.id }} .hero-video-content {
+      max-width: 100%;
+      margin-left: 0;
+      padding: 60px 30px 90px;
+    }
+
+    #hero-video-{{ section.id }} .hero-video-subheading {
+      font-size: {{ section.settings.mobile_subheading_size }}px;
+    }
+
+    #hero-video-{{ section.id }} .hero-video-heading {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+      line-height: 1.08;
+    }
+
+    #hero-video-{{ section.id }} .hero-video-buttons {
+      align-items: flex-start;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    #hero-video-{{ section.id }} .hero-video-button-primary {
+      padding: 15px 22px;
+    }
+
+    #hero-video-{{ section.id }} .hero-video-shape {
+      height: {{ section.settings.mobile_wave_height }}px;
+      clip-path: polygon(0 55%, 100% 25%, 100% 100%, 0% 100%);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Hero vidéo personnalisé",
+  "tag": "section",
+  "class": "section-hero-video-custom",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Vidéo de fond"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Image de secours si aucune vidéo"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Petit texte",
+      "default": "Depuis 1935"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre principal",
+      "default": "Le spécialiste pour\nvos créations textiles"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texte du bouton principal",
+      "default": "Découvrir nos produits"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton principal"
+    },
+    {
+      "type": "text",
+      "id": "video_button_label",
+      "label": "Texte du bouton vidéo",
+      "default": "Voir la vidéo"
+    },
+    {
+      "type": "url",
+      "id": "video_button_link",
+      "label": "Lien du bouton vidéo"
+    },
+    {
+      "type": "header",
+      "content": "Mise en page"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Hauteur desktop",
+      "min": 400,
+      "max": 900,
+      "step": 20,
+      "default": 620
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Hauteur mobile",
+      "min": 400,
+      "max": 840,
+      "step": 20,
+      "default": 620
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Largeur maximale du texte",
+      "min": 300,
+      "max": 900,
+      "step": 20,
+      "default": 620
+    },
+    {
+      "type": "range",
+      "id": "content_left_desktop",
+      "label": "Décalage du contenu à gauche desktop",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Texte"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille du titre desktop",
+      "min": 32,
+      "max": 90,
+      "step": 2,
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille du titre mobile",
+      "min": 28,
+      "max": 64,
+      "step": 2,
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Taille du petit texte desktop",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "mobile_subheading_size",
+      "label": "Taille du petit texte mobile",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Boutons"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Fond du bouton principal",
+      "default": "#3f7fce"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Texte du bouton principal",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_text",
+      "label": "Texte du bouton secondaire",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Arrondi du bouton principal",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 7
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Taille du texte des boutons",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Overlay sombre"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Couleur de l’overlay",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Opacité de l’overlay",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 35
+    },
+    {
+      "type": "header",
+      "content": "Forme inclinée du bas"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_wave",
+      "label": "Afficher la forme inclinée",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "wave_color",
+      "label": "Couleur de la forme",
+      "default": "#f3f6f8"
+    },
+    {
+      "type": "range",
+      "id": "wave_height",
+      "label": "Hauteur forme desktop",
+      "min": 60,
+      "max": 240,
+      "step": 10,
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "mobile_wave_height",
+      "label": "Hauteur forme mobile",
+      "min": 40,
+      "max": 180,
+      "step": 10,
+      "default": 90
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero vidéo personnalisé"
+    }
+  ]
+}
+{% endschema %}
