@@ -88,6 +88,32 @@
         "input_text_color": ""
       }
     },
+    "rich_text_W8zNQJ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MV6TwT": {
+          "type": "heading",
+          "settings": {
+            "text": "OUR SATISFIED CUSTOMERS",
+            "heading_tag": "h3",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_MV6TwT"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "testimonials_QUUnnE": {
       "type": "testimonials",
       "blocks": {
@@ -218,6 +244,7 @@
   },
   "order": [
     "main",
+    "rich_text_W8zNQJ",
     "testimonials_QUUnnE",
     "sectionbranding_4ktVih"
   ]
