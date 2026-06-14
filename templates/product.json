@@ -52,6 +52,18 @@
             "text_color": ""
           }
         },
+        "button_APqkrb": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "text": "Chat with an Expert on WhatsApp",
+            "size": "lg",
+            "style": "fill",
+            "stretch": true,
+            "background": "#05B67A",
+            "text_color": ""
+          }
+        },
         "description": {
           "type": "description",
           "disabled": true,
@@ -69,6 +81,7 @@
         "rating",
         "separator",
         "button_49JVAD",
+        "button_APqkrb",
         "description"
       ],
       "settings": {
