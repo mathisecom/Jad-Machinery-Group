@@ -348,11 +348,11 @@
     "featured_collection_eeyqP4": {
       "type": "featured-collection",
       "custom_css": [
-        "@media(max-width:699px){.product-list{--product-list-carousel-item-width:46vw!important}}",
-        ".product-card__figure{position:relative}",
-        ".product-card__figure::before,.product-card__figure::after{position:absolute;top:8px;padding:5px 10px;border-radius:99px;font:600 12px Arial;z-index:5}",
-        ".price-list{display:none!important}",
-        ".request-quote-button{display:block;margin-top:8px;padding:10px;text-align:center;background:#183052;color:#fff!important;font:600 13px Arial;border-radius:99px;text-decoration:none}"
+        "@media (max-width: 699px) {.product-list {--product-list-carousel-item-width: 46vw !important; }}",
+        ".product-card__figure {position: relative;}",
+        ".product-card__figure::before,.product-card__figure::after {position: absolute; top: 8px; padding: 5px 10px; border-radius: 99px; font: 600 12px Arial; z-index: 5;}",
+        ".price-list {display: none !important;}",
+        ".request-quote-button {display: block; margin-top: 8px; padding: 10px; text-align: center; background: #183052; color: #fff !important; font: 600 13px Arial; border-radius: 99px; text-decoration: none;}"
       ],
       "name": "Featured collection",
       "settings": {
@@ -379,6 +379,34 @@
         "heading_gradient": "",
         "product_card_background": "",
         "product_card_text_color": ""
+      }
+    },
+    "rich_text_EwKUNA": {
+      "type": "rich-text",
+      "blocks": {
+        "button_kU7cat": {
+          "type": "button",
+          "settings": {
+            "style": "fill",
+            "size": "lg",
+            "text": "Request Technical Quotes & Pricing",
+            "url": "shopify://pages/contact",
+            "background": "#183052",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_kU7cat"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "scrolling_text_47nc8w": {
@@ -853,6 +881,7 @@
     "imgbenefices_3BQpCg",
     "rich_text_Gf8Txb",
     "featured_collection_eeyqP4",
+    "rich_text_EwKUNA",
     "scrolling_text_47nc8w",
     "sectionbranding_8YUTBp",
     "hero_media_NATDUC",
