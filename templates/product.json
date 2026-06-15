@@ -390,11 +390,11 @@
     "featured_collection_TXGBRA": {
       "type": "featured-collection",
       "custom_css": [
-        "@media screen and (max-width: 699px) {.product-list {--product-list-carousel-item-width: 46vw !important; }}",
+        "@media (max-width: 699px) {.product-list {--product-list-carousel-item-width: 46vw !important; }}",
         ".product-card__figure {position: relative;}",
         ".product-card__figure::before,.product-card__figure::after {position: absolute; top: 8px; padding: 5px 10px; border-radius: 99px; font: 600 12px Arial; z-index: 5;}",
-        ".price-list {position: relative;}",
-        ".price-list sale-price,.price-list .sale-price {font-size: 18px; font-weight: 800; color: #183052 !important;}"
+        ".price-list {display: none !important;}",
+        ".request-quote-button {display: block; margin-top: 8px; padding: 10px; text-align: center; background: #183052; color: #fff !important; font: 600 13px Arial; border-radius: 99px; text-decoration: none;}"
       ],
       "name": "Featured collection",
       "settings": {
