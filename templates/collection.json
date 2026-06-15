@@ -31,10 +31,17 @@
     },
     "main": {
       "type": "main-collection",
+      "custom_css": [
+        "@media (max-width: 699px) {.product-list {--product-list-carousel-item-width: 46vw !important; }}",
+        ".product-card__figure {position: relative;}",
+        ".product-card__figure::before,.product-card__figure::after {position: absolute; top: 8px; padding: 5px 10px; border-radius: 99px; font: 600 12px Arial; z-index: 5;}",
+        ".price-list {display: none !important;}",
+        ".request-quote-button {display: block; margin-top: 8px; padding: 10px; text-align: center; background: #183052; color: #fff !important; font: 600 13px Arial; border-radius: 99px; text-decoration: none;}"
+      ],
       "settings": {
         "products_per_page": 24,
         "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
+        "products_per_row_desktop": 4,
         "filter_layout": "sidebar",
         "show_sort_by": true,
         "show_filters": true,
